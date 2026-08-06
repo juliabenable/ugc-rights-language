@@ -1,0 +1,408 @@
+[
+ {
+  "file": "ui-shots/tribe-tribegroup-co-0.gif",
+  "platform": "TRIBE (tribegroup.co)",
+  "shows": "Animated walkthrough of licensing content from an Influencer/Social Campaign, including the online/all-channels x 12-month/perpetual picker and price review before clicking License Content",
+  "side": "brand",
+  "found_on": "https://help.tribegroup.co/en/articles/2739849-licensing-content-from-influencer-campaigns"
+ },
+ {
+  "file": "ui-shots/tribe-tribegroup-co-1.png",
+  "platform": "TRIBE (tribegroup.co)",
+  "shows": "Creator-app screen for a brand's license request, showing the Requested tab under Content Rights and the Accept/Decline card",
+  "side": "creator",
+  "found_on": "https://help.tribegroup.co/en/articles/2867298-a-brand-has-requested-to-license-your-content-here-s-what-you-should-know"
+ },
+ {
+  "file": "ui-shots/tribe-tribegroup-co-2.png",
+  "platform": "TRIBE (tribegroup.co)",
+  "shows": "Content Campaign submission card with shortlist, chat, decline, and approve/pre-approve (license) actions",
+  "side": "brand",
+  "found_on": "https://help.tribegroup.co/en/articles/2742091-reviewing-content-campaign-submissions"
+ },
+ {
+  "file": "ui-shots/tribe-tribegroup-co-3.png",
+  "platform": "TRIBE (tribegroup.co)",
+  "shows": "Expanded submission-level view with pricing tooltip, specs, creator notes, and licensing/approval controls",
+  "side": "brand",
+  "found_on": "https://help.tribegroup.co/en/articles/2742091-reviewing-content-campaign-submissions"
+ },
+ {
+  "file": "ui-shots/tribe-tribegroup-co-4.png",
+  "platform": "TRIBE (tribegroup.co)",
+  "shows": "Pre-Approval license modal: license rights option (online/all channels) x usage (12 months/perpetual) picker, specs, thumbnail, and 50% pre-approval pricing summary",
+  "side": "brand",
+  "found_on": "https://help.tribegroup.co/en/articles/2742091-reviewing-content-campaign-submissions"
+ },
+ {
+  "file": "ui-shots/tribe-tribegroup-co-5.png",
+  "platform": "TRIBE (tribegroup.co)",
+  "shows": "Final approval/licensing modal with price breakdown (total minus 50% pre-approval fee already paid) and License content confirm button",
+  "side": "brand",
+  "found_on": "https://help.tribegroup.co/en/articles/2742091-reviewing-content-campaign-submissions"
+ },
+ {
+  "file": "ui-shots/statusphere-joinstatus-c-0.png",
+  "platform": "Statusphere (joinstatus.com)",
+  "shows": "StevieOps \"Smart Boost\" step card \u2014 the 1-click ad-code buy screen brands use to purchase Spark/Partnership ad codes",
+  "side": "brand",
+  "found_on": "https://www.joinstatus.com/micro-influencer-platform-ai"
+ },
+ {
+  "file": "ui-shots/statusphere-joinstatus-c-2.png",
+  "platform": "Statusphere (joinstatus.com)",
+  "shows": "Card thumbnail captioned \"Analytics + Rights-Managed Content in One Place\" \u2014 the rights-ready content library view",
+  "side": "brand",
+  "found_on": "https://www.joinstatus.com/rights-ready-influencer-content"
+ },
+ {
+  "file": "ui-shots/statusphere-joinstatus-c-3.png",
+  "platform": "Statusphere (joinstatus.com)",
+  "shows": "Statusphere in-product campaign setup screen for selecting which influencers to whitelist",
+  "side": "brand",
+  "found_on": "https://brands.joinstatus.com/influencer-whitelisting"
+ },
+ {
+  "file": "ui-shots/statusphere-joinstatus-c-5.png",
+  "platform": "Statusphere (joinstatus.com)",
+  "shows": "Step-4 screenshot accompanying the \"Monetize Your Content\" / \"Set your ad rates\" onboarding instruction for creators",
+  "side": "creator",
+  "found_on": "https://www.joinstatus.com/creators"
+ },
+ {
+  "file": "ui-shots/insense-insense-pro-0.png",
+  "platform": "Insense (insense.pro)",
+  "shows": "Creator app screen: connecting a Facebook account to enable whitelisting permission for a campaign",
+  "side": "creator",
+  "found_on": "https://insense.pro/blog/whitelisting-for-content-creators-risks-and-benefits"
+ },
+ {
+  "file": "ui-shots/insense-insense-pro-1.png",
+  "platform": "Insense (insense.pro)",
+  "shows": "Creator app screen: granting ad-partner permissions in about five taps, no password shared",
+  "side": "creator",
+  "found_on": "https://insense.pro/blog/whitelisting-for-content-creators-risks-and-benefits"
+ },
+ {
+  "file": "ui-shots/insense-insense-pro-2.png",
+  "platform": "Insense (insense.pro)",
+  "shows": "Brand dashboard accordion: one-click Partnership Ads connection to a creator's handle",
+  "side": "brand",
+  "found_on": "https://help.insense.pro/4299"
+ },
+ {
+  "file": "ui-shots/insense-insense-pro-3.png",
+  "platform": "Insense (insense.pro)",
+  "shows": "Brand dashboard: requesting a Meta Partnership Ads connection from a hired creator",
+  "side": "brand",
+  "found_on": "https://insense.pro/use-case/partnership-ads"
+ },
+ {
+  "file": "ui-shots/insense-insense-pro-4.png",
+  "platform": "Insense (insense.pro)",
+  "shows": "Campaign brief: selecting Meta Partnership Ads as the campaign goal/strategy",
+  "side": "brand",
+  "found_on": "https://insense.pro/use-case/partnership-ads"
+ },
+ {
+  "file": "ui-shots/insense-insense-pro-5.png",
+  "platform": "Insense (insense.pro)",
+  "shows": "In-app direct chat: creator sending the brand a TikTok Spark Ads authorization code",
+  "side": "both",
+  "found_on": "https://insense.pro/use-case/tiktok-spark-ads"
+ },
+ {
+  "file": "ui-shots/collabstr-2.jpg",
+  "platform": "Collabstr",
+  "shows": "Creator's order-request screen: order value banner, Description, Content Requirements checklist, deliverable detail, accept/decline controls",
+  "side": "creator",
+  "found_on": "https://apps.apple.com/us/app/collabstr/id6503245507"
+ },
+ {
+  "file": "ui-shots/collabstr-3.jpg",
+  "platform": "Collabstr",
+  "shows": "Creator-facing campaign brief with a Content Requirements section shown before applying",
+  "side": "creator",
+  "found_on": "https://apps.apple.com/us/app/collabstr/id6503245507"
+ },
+ {
+  "file": "ui-shots/collabstr-4.jpg",
+  "platform": "Collabstr",
+  "shows": "Creator public profile with package pricing (e.g. Instagram Feed Post $400) \u2014 the listing brands browse; no separate usage-rights price line is visible",
+  "side": "both",
+  "found_on": "https://apps.apple.com/us/app/collabstr/id6503245507"
+ },
+ {
+  "file": "ui-shots/social-cat-thesocialcat-0.png",
+  "platform": "Social Cat (thesocialcat.com)",
+  "shows": "Contract-document icon in the collaboration toolbar, next to the 'Pending shipping' status pill, that opens the contract modal",
+  "side": "brand",
+  "found_on": "https://help.thesocialcat.com/en/articles/1680770"
+ },
+ {
+  "file": "ui-shots/social-cat-thesocialcat-1.png",
+  "platform": "Social Cat (thesocialcat.com)",
+  "shows": "'Contract agreement' modal: collaboration type, content type, fee, deadline, deliverables \u2014 no rights/licensing field present",
+  "side": "brand",
+  "found_on": "https://help.thesocialcat.com/en/articles/1680770"
+ },
+ {
+  "file": "ui-shots/social-cat-thesocialcat-2.png",
+  "platform": "Social Cat (thesocialcat.com)",
+  "shows": "Deadline-to-post-content datepicker inside the same contract modal",
+  "side": "brand",
+  "found_on": "https://help.thesocialcat.com/en/articles/1680770"
+ },
+ {
+  "file": "ui-shots/social-cat-thesocialcat-3.png",
+  "platform": "Social Cat (thesocialcat.com)",
+  "shows": "Collaboration action bar with the 'Upload content' button creators click to submit deliverables that become brand-licensed",
+  "side": "creator",
+  "found_on": "https://help.thesocialcat.com/en/articles/3297666"
+ },
+ {
+  "file": "ui-shots/social-cat-thesocialcat-4.png",
+  "platform": "Social Cat (thesocialcat.com)",
+  "shows": "'Upload content' modal with 'Upload file' button; no rights or consent language shown at upload time",
+  "side": "creator",
+  "found_on": "https://help.thesocialcat.com/en/articles/3297666"
+ },
+ {
+  "file": "ui-shots/social-cat-thesocialcat-5.png",
+  "platform": "Social Cat (thesocialcat.com)",
+  "shows": "Brand dashboard left nav showing 'Content' as a top-level section alongside Campaigns/Search/Inbox, home of licensed downloads",
+  "side": "brand",
+  "found_on": "https://thesocialcat.com/brands"
+ },
+ {
+  "file": "ui-shots/trend-io-soona-ugc-trend-0.png",
+  "platform": "Trend.io / soona UGC (Trend acquired by soona in 2023; help content now lives on support.soona.co) \u2014 and Billo",
+  "shows": "Checkout step 1: brand picks 'Creator video ad' vs 'Organic video post + partnership ads'",
+  "side": "brand",
+  "found_on": "https://help.billo.app/en/articles/5355527-do-creators-post-videos-on-their-social-media"
+ },
+ {
+  "file": "ui-shots/trend-io-soona-ugc-trend-1.png",
+  "platform": "Trend.io / soona UGC (Trend acquired by soona in 2023; help content now lives on support.soona.co) \u2014 and Billo",
+  "shows": "Brief step: distribution-goal checkboxes for organic reach vs. content/account-level partnership ads, priced live",
+  "side": "brand",
+  "found_on": "https://help.billo.app/en/articles/14494970-for-brands-partnership-ads-account-level-permissions"
+ },
+ {
+  "file": "ui-shots/trend-io-soona-ugc-trend-2.png",
+  "platform": "Trend.io / soona UGC (Trend acquired by soona in 2023; help content now lives on support.soona.co) \u2014 and Billo",
+  "shows": "Table comparing organic post vs. content-level vs. account-level ad access, platforms, and best use",
+  "side": "brand",
+  "found_on": "https://help.billo.app/en/articles/14494970-for-brands-partnership-ads-account-level-permissions"
+ },
+ {
+  "file": "ui-shots/trend-io-soona-ugc-trend-3.png",
+  "platform": "Trend.io / soona UGC (Trend acquired by soona in 2023; help content now lives on support.soona.co) \u2014 and Billo",
+  "shows": "Approvals tab stating that approving content grants the brand 100% usage rights forever",
+  "side": "brand",
+  "found_on": "https://support.soona.co/campaign-management"
+ },
+ {
+  "file": "ui-shots/trend-io-soona-ugc-trend-4.png",
+  "platform": "Trend.io / soona UGC (Trend acquired by soona in 2023; help content now lives on support.soona.co) \u2014 and Billo",
+  "shows": "Instagram consent sheet: creator taps Approve/Decline to let the brand run partnership ads from their handle",
+  "side": "creator",
+  "found_on": "https://help.billo.app/en/articles/9707083-for-creators-granting-whitelisting-permissions"
+ },
+ {
+  "file": "ui-shots/trend-io-soona-ugc-trend-5.png",
+  "platform": "Trend.io / soona UGC (Trend acquired by soona in 2023; help content now lives on support.soona.co) \u2014 and Billo",
+  "shows": "Side-by-side Instagram mockup: brand-owned ad vs. whitelisted ad running from the creator's own handle",
+  "side": "creator",
+  "found_on": "https://help.billo.app/en/articles/9691508-for-creators-join-meta-whitelisting"
+ },
+ {
+  "file": "ui-shots/izea-flex-the-creator-ma-0.png",
+  "platform": "IZEA (Flex + The Creator Marketplace)",
+  "shows": "Top of Flex offer-review page: Creator / Brand / Marketer identification section",
+  "side": "creator",
+  "found_on": "https://support.izea.com/knowledge/creators-accepting-negotiating-declining-offers"
+ },
+ {
+  "file": "ui-shots/izea-flex-the-creator-ma-1.png",
+  "platform": "IZEA (Flex + The Creator Marketplace)",
+  "shows": "Deliverables list on the offer-review page (post type, platform, content type, payment, due date, requirements)",
+  "side": "creator",
+  "found_on": "https://support.izea.com/knowledge/creators-accepting-negotiating-declining-offers"
+ },
+ {
+  "file": "ui-shots/izea-flex-the-creator-ma-2.png",
+  "platform": "IZEA (Flex + The Creator Marketplace)",
+  "shows": "Additional Requirements / Files section of the offer, positioned immediately before the article's description of the creator-terms (payment + content usage) section",
+  "side": "creator",
+  "found_on": "https://support.izea.com/knowledge/creators-accepting-negotiating-declining-offers"
+ },
+ {
+  "file": "ui-shots/izea-flex-the-creator-ma-3.png",
+  "platform": "IZEA (Flex + The Creator Marketplace)",
+  "shows": "Accept Offer / Negotiate / Decline Offer action buttons on the offer-review page",
+  "side": "creator",
+  "found_on": "https://support.izea.com/knowledge/creators-accepting-negotiating-declining-offers"
+ },
+ {
+  "file": "ui-shots/izea-flex-the-creator-ma-4.png",
+  "platform": "IZEA (Flex + The Creator Marketplace)",
+  "shows": "Creator Marketplace listing page where a brand/buyer selects a Deal (package priced partly by content-licensing type)",
+  "side": "brand",
+  "found_on": "https://support.izea.com/knowledge/buyers-purchasing-a-listing"
+ },
+ {
+  "file": "ui-shots/izea-flex-the-creator-ma-5.png",
+  "platform": "IZEA (Flex + The Creator Marketplace)",
+  "shows": "Options/add-ons a buyer can attach after selecting a Deal",
+  "side": "brand",
+  "found_on": "https://support.izea.com/knowledge/buyers-purchasing-a-listing"
+ },
+ {
+  "file": "ui-shots/amazon-creator-connectio-0.png",
+  "platform": "Amazon Creator Connections \u2014 Sponsored Content Requests (SCR)",
+  "shows": "Amazon Ads Creator Connections console: pick a brand, click Create campaign; dropdown reveals Affiliate+ campaign / License creator content / Sponsored content requests. Same screen as SCR Brand Guide PDF p.4.",
+  "side": "brand",
+  "found_on": "https://paragonagency.com/amazon-sponsored-content-requests/"
+ },
+ {
+  "file": "ui-shots/amazon-creator-connectio-1.png",
+  "platform": "Amazon Creator Connections \u2014 Sponsored Content Requests (SCR)",
+  "shows": "Selecting Creators step: filter by flat-fee rate/category, view Asking rate, See rates, Storefront, socials, bio. Same screen as SCR Brand Guide PDF p.9.",
+  "side": "brand",
+  "found_on": "https://paragonagency.com/amazon-sponsored-content-requests/"
+ },
+ {
+  "file": "ui-shots/amazon-creator-connectio-2.png",
+  "platform": "Amazon Creator Connections \u2014 Sponsored Content Requests (SCR)",
+  "shows": "Content review modal: compliance checklist (product tag/hashtag minimums), Yes/No requirements check, Cancel/Request edits/Approve \u2014 the gate that licenses content into the brand's Asset Library. Same screen as SCR Brand Guide PDF p.10.",
+  "side": "brand",
+  "found_on": "https://paragonagency.com/amazon-sponsored-content-requests/"
+ },
+ {
+  "file": "ui-shots/social-native-formerly-o-0.png",
+  "platform": "Social Native (formerly Olapic) \u2014 olapic.com now 301-redirects to socialnative.com; same company/brand today",
+  "shows": "Classic Olapic 'Moderation Queue' (Curate tab) \u2014 approve/reject grid with a Rights Status filter in the sidebar",
+  "side": "brand",
+  "found_on": "https://www.getapp.co.uk/software/2042887/olapic"
+ },
+ {
+  "file": "ui-shots/social-native-formerly-o-1.jpg",
+  "platform": "Social Native (formerly Olapic) \u2014 olapic.com now 301-redirects to socialnative.com; same company/brand today",
+  "shows": "Modern Social Native content-submission review modal with AI pass/fail scoring and an Approved status banner",
+  "side": "brand",
+  "found_on": "https://www.socialnative.ai/platform"
+ },
+ {
+  "file": "ui-shots/social-native-formerly-o-2.png",
+  "platform": "Social Native (formerly Olapic) \u2014 olapic.com now 301-redirects to socialnative.com; same company/brand today",
+  "shows": "Brand comment asking a poster to reply #yespetsmart to grant rights \u2014 same hashtag-reply mechanic Olapic's brand ToS pages describe (vendor unconfirmed)",
+  "side": "creator",
+  "found_on": "https://www.shortstack.com/blog/user-generated-content-marketing-get-permission/"
+ },
+ {
+  "file": "ui-shots/social-native-formerly-o-4.png",
+  "platform": "Social Native (formerly Olapic) \u2014 olapic.com now 301-redirects to socialnative.com; same company/brand today",
+  "shows": "Brand reposting rights-granted content with photo credit to the original poster, after the hashtag reply",
+  "side": "brand",
+  "found_on": "https://www.shortstack.com/blog/user-generated-content-marketing-get-permission/"
+ },
+ {
+  "file": "ui-shots/shopmy-amplify-spotlight-0.png",
+  "platform": "ShopMy (Amplify / Spotlights / Opportunities / Mentions) + LTK (LTK Connect)",
+  "shows": "Amplify landing-page panel for the 'Own the content creators make for you' content-purchase pitch to brands",
+  "side": "brand",
+  "found_on": "https://shopmy.us/home/brands/amplify"
+ },
+ {
+  "file": "ui-shots/shopmy-amplify-spotlight-1.png",
+  "platform": "ShopMy (Amplify / Spotlights / Opportunities / Mentions) + LTK (LTK Connect)",
+  "shows": "Third-party (creator blogger) screenshot of the 'Set up Spotlights' modal used to authorize the Meta partnership-ad link",
+  "side": "creator",
+  "found_on": "https://saltyvagabonds.com/shopmy-spotlights-creator-walkthrough/"
+ },
+ {
+  "file": "ui-shots/shopmy-amplify-spotlight-2.png",
+  "platform": "ShopMy (Amplify / Spotlights / Opportunities / Mentions) + LTK (LTK Connect)",
+  "shows": "Third-party screenshot of the Spotlights dashboard's 'Your Top Brand Partners' row of auto-approved (whitelisted) brands",
+  "side": "creator",
+  "found_on": "https://saltyvagabonds.com/shopmy-spotlights-creator-walkthrough/"
+ },
+ {
+  "file": "ui-shots/shopmy-amplify-spotlight-3.png",
+  "platform": "ShopMy (Amplify / Spotlights / Opportunities / Mentions) + LTK (LTK Connect)",
+  "shows": "Third-party screenshot of the Nike 'All Mentions' panel \u2014 a creator's existing brand-tagged posts with view counts, the eligible-content catalog Spotlight requests are drawn from",
+  "side": "creator",
+  "found_on": "https://saltyvagabonds.com/shopmy-spotlights-creator-walkthrough/"
+ },
+ {
+  "file": "ui-shots/aspire-grin-and-later-in-0.png",
+  "platform": "Aspire, GRIN, and Later Influence (formerly Mavrck) \u2014 comparative UI archaeology",
+  "shows": "Aspire's Advertiser Access dashboard view referenced in the creator FAQ on allowlisting",
+  "side": "brand",
+  "found_on": "https://help.aspireiq.com/en/articles/6023377-advertiser-access-faqs-for-creators"
+ },
+ {
+  "file": "ui-shots/aspire-grin-and-later-in-1.png",
+  "platform": "Aspire, GRIN, and Later Influence (formerly Mavrck) \u2014 comparative UI archaeology",
+  "shows": "Aspire Standard Brief template screen containing the Content Usage Rights, Ad Rights, and Additional Terms fields",
+  "side": "brand",
+  "found_on": "https://help.aspireiq.com/en/articles/7931868-how-to-set-up-a-brief-template"
+ },
+ {
+  "file": "ui-shots/aspire-grin-and-later-in-2.png",
+  "platform": "Aspire, GRIN, and Later Influence (formerly Mavrck) \u2014 comparative UI archaeology",
+  "shows": "GRIN Live Site proposal detail screen with the TikTok Creator Marketplace invite link highlighted",
+  "side": "creator",
+  "found_on": "https://help.grin.co/docs/uploading-tiktok-content-for-spark-ads"
+ },
+ {
+  "file": "ui-shots/aspire-grin-and-later-in-3.png",
+  "platform": "Aspire, GRIN, and Later Influence (formerly Mavrck) \u2014 comparative UI archaeology",
+  "shows": "TikTok's Content disclosure and ads settings with Your Brand and Ad authorization toggles enabled, per GRIN's Spark Ads walkthrough",
+  "side": "creator",
+  "found_on": "https://help.grin.co/docs/uploading-tiktok-content-for-spark-ads"
+ },
+ {
+  "file": "ui-shots/aspire-grin-and-later-in-4.png",
+  "platform": "Aspire, GRIN, and Later Influence (formerly Mavrck) \u2014 comparative UI archaeology",
+  "shows": "Later Influence's Meta Integration setup screen for connecting the Meta Business account used for Partnership Ads (whitelisting) requests",
+  "side": "brand",
+  "found_on": "https://help-influence.later.com/hc/en-us/articles/34843828766359-Paid-Media-Connecting-Meta-Business-Assets-to-Later-Influence"
+ },
+ {
+  "file": "ui-shots/aspire-grin-and-later-in-5.png",
+  "platform": "Aspire, GRIN, and Later Influence (formerly Mavrck) \u2014 comparative UI archaeology",
+  "shows": "Later Influence screen showing connected Meta business assets (Page, Ad Account, Instagram Profile) once the integration is finished",
+  "side": "brand",
+  "found_on": "https://help-influence.later.com/hc/en-us/articles/34843828766359-Paid-Media-Connecting-Meta-Business-Assets-to-Later-Influence"
+ },
+ {
+  "file": "ui-shots/minisocial-stack-influen-0.png",
+  "platform": "minisocial + Stack Influence + Kale + Upfluence (UGC-rights UI competitor scan)",
+  "shows": "Stack Influence campaign dashboard grid with Sign-ups, Estimated purchases, Follow-ups, Done metrics \u2014 the closest thing to a brand-side content screen; no rights control visible",
+  "side": "brand",
+  "found_on": "https://stackinfluence.com/platform/user-generated-content"
+ },
+ {
+  "file": "ui-shots/minisocial-stack-influen-1.png",
+  "platform": "minisocial + Stack Influence + Kale + Upfluence (UGC-rights UI competitor scan)",
+  "shows": "Meta Partnership Ads dashboard listing creator videos 'ready for promotion' \u2014 whitelisting-adjacent screen, but codes are auto-requested behind the scenes, not via a visible rights toggle",
+  "side": "brand",
+  "found_on": "https://stackinfluence.com/advertising-solutions/meta-partnership-ads"
+ },
+ {
+  "file": "ui-shots/minisocial-stack-influen-2.png",
+  "platform": "minisocial + Stack Influence + Kale + Upfluence (UGC-rights UI competitor scan)",
+  "shows": "Campaign tracking dashboard with completed-posts %, earned media value, and top creator promotions \u2014 general performance view, not a rights/licensing panel",
+  "side": "brand",
+  "found_on": "https://stackinfluence.com/advertising-solutions/meta-partnership-ads"
+ },
+ {
+  "file": "ui-shots/minisocial-stack-influen-4.png",
+  "platform": "minisocial + Stack Influence + Kale + Upfluence (UGC-rights UI competitor scan)",
+  "shows": "Step 1 of creator flow (choose product from catalog) \u2014 illustrates that the creator-side process has no rights/consent screen anywhere in its steps",
+  "side": "creator",
+  "found_on": "https://stackinfluence.com/influencer-campaign-process/"
+ }
+]

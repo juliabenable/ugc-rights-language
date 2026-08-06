@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UGC Rights — What Everyone Else Does · market study</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Spline+Sans+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#faf6ef; --paper-deep:#f3ecdf; --ink:#1d1a15; --ink-soft:#5c554a; --ink-faint:#948b7d;
+  --rule:#e2d9c8; --card:#fffdf9; --purple:#7a5cfa; --purple-deep:#5b3fd4; --purple-tint:#efeaff;
+  --flag:#d94f1e; --flag-tint:#fdeade; --green:#2e7d4f; --green-tint:#e3f2e8; --amber:#a3690a; --amber-tint:#fdf3dc;
+  --shadow:0 2px 3px rgba(50,40,20,.05),0 14px 34px rgba(50,40,20,.09);
+  --serif:"Fraunces",Georgia,serif; --sans:"Instrument Sans","Helvetica Neue",sans-serif; --mono:"Spline Sans Mono",ui-monospace,monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.5;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0.45 0 0 0 0 0.4 0 0 0 0 0.3 0 0 0 0.05 0'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E")}
+.wrap{position:relative;z-index:1;max-width:1120px;margin:0 auto;padding:0 32px 120px}
+
+header{padding:70px 0 30px;border-bottom:2px solid var(--ink)}
+.crumbs{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;display:flex;gap:14px;flex-wrap:wrap;margin-bottom:22px}
+.crumbs a{color:var(--ink-soft);text-decoration:none;border-bottom:1px dashed var(--rule)}
+.crumbs a:hover{color:var(--purple-deep)}
+.crumbs .here{color:var(--flag)}
+.kicker{font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--flag);display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.kicker .dot{width:7px;height:7px;border-radius:50%;background:var(--flag)}
+h1{font-family:var(--serif);font-weight:390;font-size:clamp(42px,6.6vw,76px);line-height:1.02;letter-spacing:-.015em;margin:16px 0 12px}
+h1 em{font-style:italic;font-weight:340;color:var(--purple-deep)}
+.dek{font-size:18px;color:var(--ink-soft);max-width:700px}
+.dek strong{color:var(--ink)}
+.method{display:flex;gap:22px;flex-wrap:wrap;margin-top:22px;font-family:var(--mono);font-size:11.5px;color:var(--ink-faint);letter-spacing:.04em}
+.method b{color:var(--ink-soft)}
+
+section{margin-top:78px}
+.sec-head{display:flex;align-items:baseline;gap:18px;margin-bottom:8px}
+.sec-num{font-family:var(--serif);font-style:italic;font-weight:340;font-size:20px;color:var(--flag)}
+h2{font-family:var(--serif);font-weight:480;font-size:clamp(27px,3.4vw,38px);letter-spacing:-.01em}
+.sec-sub{color:var(--ink-soft);max-width:700px;margin-bottom:26px;font-size:15.5px}
+
+/* thesis */
+.thesis{background:var(--ink);color:var(--paper);border-radius:18px;padding:36px 40px;margin-top:36px;box-shadow:0 18px 44px rgba(35,25,10,.28)}
+.thesis .t-label{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#b7a6ff;margin-bottom:14px}
+.thesis p{font-family:var(--serif);font-weight:380;font-size:clamp(19px,2.4vw,25px);line-height:1.45}
+.thesis p b{color:#d8cdff;font-weight:600}
+.thesis .t-sub{font-family:var(--sans);font-size:14.5px;color:#cfc6b5;margin-top:16px;line-height:1.6;max-width:760px}
+
+/* landscape */
+.land{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.land-card{background:var(--card);border:1px solid var(--rule);border-radius:14px;padding:18px 20px;box-shadow:var(--shadow)}
+.land-card h3{font-family:var(--serif);font-size:18px;font-weight:520;margin-bottom:2px}
+.land-role{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--purple-deep);margin-bottom:10px}
+.land-card ul{list-style:none;font-size:13.5px;color:var(--ink-soft);display:flex;flex-direction:column;gap:4px}
+.land-card li b{color:var(--ink);font-weight:600}
+.land-move{border-top:1px dashed var(--rule);margin-top:10px;padding-top:9px;font-size:13px;color:var(--ink-soft)}
+.land-move b{color:var(--flag)}
+
+/* matrix */
+.mx-scroll{overflow-x:auto;border:1.5px solid var(--ink);border-radius:14px;background:var(--card);box-shadow:var(--shadow)}
+table.mx{border-collapse:collapse;width:100%;min-width:1020px;font-size:13px}
+.mx th{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);text-align:left;padding:12px 14px;border-bottom:1.5px solid var(--ink);background:var(--paper-deep);position:sticky;top:0}
+.mx td{padding:11px 14px;border-bottom:1px solid var(--rule);vertical-align:top;line-height:1.45}
+.mx tr:last-child td{border-bottom:none}
+.mx .plat{font-weight:700;white-space:nowrap}
+.mx .grp td{background:var(--purple-tint);font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--purple-deep);padding:7px 14px}
+.pill{display:inline-block;font-family:var(--mono);font-size:10px;padding:2px 8px;border-radius:99px;white-space:nowrap}
+.pill.y{background:var(--green-tint);color:var(--green)}
+.pill.n{background:var(--flag-tint);color:var(--flag)}
+.pill.m{background:var(--amber-tint);color:var(--amber)}
+.mx .note{color:var(--ink-soft)}
+
+/* receipts / deep dives */
+.dives{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.dive{background:var(--card);border:1px solid var(--rule);border-radius:14px;padding:20px 22px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:10px}
+.dive.hot{border:1.5px solid var(--purple)}
+.dive-head{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.dive h3{font-family:var(--serif);font-size:19px;font-weight:520}
+.dive .tagline{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--purple-deep);text-align:right}
+.dive q{font-family:var(--serif);font-weight:420;font-size:15px;line-height:1.45;quotes:"“" "”";color:var(--ink)}
+.dive .src{font-family:var(--mono);font-size:10.5px;color:var(--ink-faint)}
+.dive .body{font-size:13.5px;color:var(--ink-soft);line-height:1.55}
+.dive .body b{color:var(--ink)}
+.steal{background:var(--purple-tint);border-radius:9px;padding:10px 14px;font-size:13px;line-height:1.5;margin-top:auto}
+.steal b{color:var(--purple-deep)}
+
+/* ladder */
+.ladder{display:flex;flex-direction:column;gap:8px;max-width:840px}
+.rung{display:grid;grid-template-columns:200px 1fr;gap:0;border:1px solid var(--rule);border-radius:12px;overflow:hidden;background:var(--card);box-shadow:var(--shadow)}
+.rung .r-name{background:var(--paper-deep);padding:13px 16px;font-weight:700;font-size:14px;border-right:1px solid var(--rule);display:flex;flex-direction:column;justify-content:center}
+.rung .r-name small{font-weight:400;font-size:11.5px;color:var(--ink-soft)}
+.rung .r-body{padding:13px 16px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.r-price{font-family:var(--serif);font-style:italic;font-size:17px;color:var(--purple-deep);white-space:nowrap}
+.r-note{font-size:13px;color:var(--ink-soft);line-height:1.45;flex:1;min-width:200px}
+.r-fix{font-family:var(--mono);font-size:10px;background:var(--flag-tint);color:var(--flag);border-radius:99px;padding:2.5px 8px;white-space:nowrap}
+.rung.free .r-price{color:var(--green)}
+
+/* verdict on $75 */
+.verdict-box{background:var(--card);border:1.5px solid var(--ink);border-radius:16px;padding:28px 32px;box-shadow:var(--shadow);max-width:860px}
+.verdict-box h3{font-family:var(--serif);font-size:21px;font-weight:520;margin-bottom:12px}
+.verdict-box p{font-size:15px;color:var(--ink-soft);margin-bottom:12px;line-height:1.6}
+.verdict-box p b{color:var(--ink)}
+.verdict-line{background:var(--green-tint);border-radius:10px;padding:13px 17px;font-size:14.5px;line-height:1.55}
+.verdict-line b{color:var(--green)}
+
+/* so what */
+.sowhat{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.sw{border-radius:16px;padding:24px 26px}
+.sw.now{background:var(--card);border:1.5px solid var(--rule);box-shadow:var(--shadow)}
+.sw.later{background:var(--ink);color:var(--paper)}
+.sw h3{font-family:var(--serif);font-size:20px;font-weight:520;margin-bottom:4px}
+.sw .sw-tag{font-family:var(--mono);font-size:10px;letter-spacing:.15em;text-transform:uppercase;margin-bottom:12px;display:block}
+.sw.now .sw-tag{color:var(--flag)}
+.sw.later .sw-tag{color:#b7a6ff}
+.sw ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+.sw li{padding-left:22px;position:relative;font-size:14px;line-height:1.5}
+.sw.now li::before{content:"→";position:absolute;left:0;color:var(--flag)}
+.sw.later li::before{content:"✦";position:absolute;left:0;color:#b7a6ff}
+.sw.now li b{color:var(--ink)}
+.sw.later li{color:#e6e0d3}
+.sw.later li b{color:#d8cdff}
+
+/* verification */
+.verif{border:1.5px solid var(--ink);border-radius:14px;overflow:hidden;background:var(--card);box-shadow:var(--shadow)}
+table.vt{border-collapse:collapse;width:100%;font-size:13px}
+.vt th{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);text-align:left;padding:11px 14px;border-bottom:1.5px solid var(--ink);background:var(--paper-deep)}
+.vt td{padding:11px 14px;border-bottom:1px solid var(--rule);vertical-align:top;line-height:1.45}
+.vt tr:last-child td{border-bottom:none}
+.vt .claim-c{font-weight:600;max-width:420px}
+.vt .ev{color:var(--ink-soft);font-size:12.5px}
+footer{margin-top:96px;padding-top:22px;border-top:2px solid var(--ink);display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;color:var(--ink-soft)}
+
+@media (max-width:860px){.dives,.sowhat{grid-template-columns:1fr}.rung{grid-template-columns:1fr}.rung .r-name{border-right:none;border-bottom:1px solid var(--rule)}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <nav class="crumbs">
+    <a href="/ugc-rights-101.html">↳ ugc rights 101 (the guide)</a>
+    <a href="/rights-language-v1.html">↳ outreach language (the proof)</a>
+    <span class="here">● what everyone else does (this study)</span>
+  </nav>
+  <div class="kicker"><span class="dot"></span>market study · aug 6 2026<span class="dot"></span>25 platforms + the rails</div>
+  <h1>UGC Rights — <em>what everyone else does</em></h1>
+  <p class="dek">How the market handles content usage rights: what's bundled free, what costs extra, how it's priced, and where <strong>Benable's "buy the rights to this post"</strong> fits. Built from four parallel research tracks over official terms, help centers, and pricing pages, then an adversarial verification pass on every load-bearing claim.</p>
+  <div class="method"><span><b>4+2</b> research waves</span><span><b>~150</b> primary sources fetched</span><span><b>19</b> claims re-verified vs. primary docs</span><span><b>58</b> UI screenshots archived</span><span>every quote sourced · unverified marked</span></div>
+</header>
+
+<div class="thesis">
+  <div class="t-label">The one-line thesis</div>
+  <p>The market's loudest pitch is <b>"no negotiation"</b> — broad, perpetual rights bundled into the base price and marketed as a checkbox. Discrete, creator-paid rights purchases on already-live posts barely exist: <b>TRIBE</b> is the lone productized case (on its own campaign content), <b>IZEA</b> names it in a contract but prices nothing, <b>Amazon</b> caps it at 90 days of Amazon-only ads — and the biggest player in organic-UGC rights, <b>Olapic/Social Native, pays creators $0</b> for perpetual all-channel consent. The genuinely unclaimed ground: <b>visible creator payment at a flat pass-through price, on gifted-campaign content — and eventually any organic post</b>. Keep the buying one-click, keep the negotiation invisible, pay the creator.</p>
+  <div class="t-sub">Corollary: Chiara's "I keep Social Cat for ad rights" almost certainly means she values their bundled-by-default simplicity — Social Cat has no rights store, it just includes everything. Matching that in future briefs (rights baked in up front, the Just Juice plan) and selling retroactive rights on past campaigns are two different products. This study covers both.</div>
+</div>
+
+<!-- ══════════ 01 landscape ══════════ -->
+<section id="landscape">
+  <div class="sec-head"><span class="sec-num">01 —</span><h2>The landscape</h2></div>
+  <p class="sec-sub">Four camps, four different answers to "who owns the content?"</p>
+  <div class="land">
+    <div class="land-card">
+      <h3>Gifted portals</h3><div class="land-role">Benable's direct comps</div>
+      <ul><li><b>Social Cat</b> · perpetual license, ads included, ToS-automatic</li><li><b>Statusphere</b> · organic perpetual + ads 1yr, 1-click ad codes</li><li><b>minisocial</b> · "mini license" perpetual + 30d whitelisting</li><li><b>Influenster/BV</b> · perpetual for sampling, ads = separate consent</li><li><b>Skeepers</b> · rights-for-product, creators waive extra comp</li></ul>
+      <div class="land-move"><b>Their move:</b> bundle everything, sell the absence of negotiation.</div>
+    </div>
+    <div class="land-card">
+      <h3>UGC studios</h3><div class="land-role">Made-to-order content</div>
+      <ul><li><b>Billo</b> · full IP assignment; creator-priced 30d ad add-ons</li><li><b>Insense</b> · perpetual license; whitelisting $100–150/mo</li><li><b>JoinBrands</b> · "unlimited rights" + free ad codes, all tiers</li><li><b>Cohley</b> · client owns it, zero add-ons, zero platform cut</li><li><b>Twirl</b> · "100% ownership" (ToS says license); £100/30d boosts</li></ul>
+      <div class="land-move"><b>Their move:</b> rights ride along with the content payment — never a separate line.</div>
+    </div>
+    <div class="land-card">
+      <h3>Enterprise + rails</h3><div class="land-role">Contracts & plumbing</div>
+      <ul><li><b>#paid</b> · named rights tiers + published volume discounts</li><li><b>Aspire / CreatorIQ</b> · brokered ad-permission flows</li><li><b>Grin</b> · freeform contracts, no rights tooling</li><li><b>TikTok Spark Ads</b> · 7/30/60/365-day codes, revocable</li><li><b>Meta partnership ads</b> · no expiry, revoke-anytime</li></ul>
+      <div class="land-move"><b>Their move:</b> authorization windows, not licenses — nothing portable off-platform.</div>
+    </div>
+    <div class="land-card">
+      <h3>Affiliate-adjacent</h3><div class="land-role">The surprise</div>
+      <ul><li><b>ShopMy</b> · quietly sells rights via "Amplify" (buy content from talent, white-labeled ads)</li><li><b>LTK</b> · brand pages offer "commission, license, and distribute"; sublicense right in creator ToS</li></ul>
+      <div class="land-move"><b>Their move:</b> commissioning <em>new</em> content-plus-rights — not licensing already-live organic posts. The hypothesis that they "don't touch rights" is wrong; the narrower wedge is still open.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ 02 matrix ══════════ -->
+<section id="matrix">
+  <div class="sec-head"><span class="sec-num">02 —</span><h2>The matrix</h2></div>
+  <p class="sec-sub">What each platform bundles, what costs extra, and whether the creator ever sees rights money. <span class="pill y">included</span> <span class="pill m">conditional / add-on</span> <span class="pill n">absent / none found</span></p>
+  <div class="mx-scroll"><table class="mx">
+    <thead><tr><th>Platform</th><th>Base grant</th><th>Ads from brand handle</th><th>Creator-handle ads (whitelisting)</th><th>Extra rights fees</th><th>Creator paid extra for rights?</th></tr></thead>
+    <tbody>
+      <tr class="grp"><td colspan="6">Gifted portals — Benable's set</td></tr>
+      <tr><td class="plat">Social Cat</td><td>Perpetual license, all channels <span class="pill y">auto via ToS</span></td><td><span class="pill y">included</span></td><td><span class="pill n">none found</span></td><td><span class="pill n">none</span></td><td><span class="pill n">no</span></td></tr>
+      <tr><td class="plat">Statusphere</td><td>Organic perpetual <span class="pill y">auto</span></td><td><span class="pill m">1-year term, auto-granted</span></td><td><span class="pill y">1-click ad-code "buy"</span></td><td class="note">Statusphere fee, % undisclosed</td><td><span class="pill y">creator-set ad rates</span></td></tr>
+      <tr><td class="plat">minisocial</td><td>"Mini license" perpetual, paid + organic <span class="pill y">auto</span></td><td><span class="pill y">included</span></td><td><span class="pill m">30 days included*</span></td><td><span class="pill n">none</span> <span class="note">($3k / 10 creators flat)</span></td><td><span class="pill n">no</span></td></tr>
+      <tr><td class="plat">Influenster / BV</td><td>Sampling: perpetual · organic reviews: display-only, revocable</td><td><span class="pill m">separate consent</span></td><td><span class="pill n">not productized</span></td><td class="note">custom contracts, unpublished</td><td><span class="pill n">no (waived)</span></td></tr>
+      <tr><td class="plat">Skeepers</td><td>License while subscribed · 20-yr likeness cap</td><td><span class="pill y">included</span></td><td><span class="pill m">code request, unpriced</span></td><td class="note">"display subscription" to keep using post-churn</td><td><span class="pill n">no — waived for product</span></td></tr>
+      <tr class="grp"><td colspan="6">UGC studios — made-to-order</td></tr>
+      <tr><td class="plat">Insense</td><td>Perpetual digital license on approval + payment</td><td><span class="pill y">included</span></td><td><span class="pill m">$100–150/mo · default 30d</span></td><td class="note">extended/broadcast rights: quote-only</td><td><span class="pill y">whitelisting fees</span></td></tr>
+      <tr><td class="plat">Billo</td><td><b>Full IP assignment</b> in order fee (no AI training)</td><td><span class="pill y">included</span></td><td><span class="pill m">creator-priced add-ons (organic 30d · partnership ads)</span></td><td class="note">raw footage: creator price +25% markup</td><td><span class="pill y">posting/ads/raw SKUs</span></td></tr>
+      <tr><td class="plat">JoinBrands</td><td>"Unlimited usage rights" (ToS says license) + AI training incl.</td><td><span class="pill y">included</span></td><td><span class="pill y">Spark + Partnership codes free</span></td><td><span class="pill n">none</span></td><td><span class="pill n">no</span></td></tr>
+      <tr><td class="plat">Cohley</td><td><b>Client owns content</b>, perpetual</td><td><span class="pill y">included</span></td><td><span class="pill y">workflow, not a SKU</span></td><td><span class="pill n">"no hidden add-ons"</span></td><td><span class="pill n">no (but 0% platform cut)</span></td></tr>
+      <tr><td class="plat">Twirl</td><td>"100% ownership" marketing · ToS: non-exclusive license, 12-mo creator takedown</td><td><span class="pill y">included</span></td><td><span class="pill m">£100/post · 30d cap</span></td><td class="note">variations £60 · lifestyle images £50</td><td><span class="pill y">£100 whitelisting fee</span></td></tr>
+      <tr class="grp"><td colspan="6">Enterprise + affiliate-adjacent</td></tr>
+      <tr><td class="plat">#paid</td><td>"Just Content" ~12-mo owned channels</td><td><span class="pill m">Paid Social Rights tier</span></td><td><span class="pill m">Creator Licensing tier</span></td><td class="note">Print/Broadcast/OOH per-month · 3/6/12-mo = 10/20/30% off</td><td><span class="pill y">priced per tier</span></td></tr>
+      <tr><td class="plat">Grin</td><td>Whatever the freeform contract says</td><td><span class="pill m">manual</span></td><td><span class="pill n">manual, off-platform</span></td><td class="note">n/a — no rights tooling</td><td><span class="pill m">negotiated</span></td></tr>
+      <tr><td class="plat">Aspire</td><td>Negotiated per brief</td><td><span class="pill m">CreatorAds</span></td><td><span class="pill y">brokered auto-grant/revoke</span></td><td class="note">rights fee negotiated off-platform</td><td><span class="pill m">negotiated direct</span></td></tr>
+      <tr><td class="plat">CreatorIQ</td><td>Negotiated per contract</td><td><span class="pill m">via Branded Content API</span></td><td><span class="pill y">"Dark Posts" brokered</span></td><td class="note">unpublished</td><td><span class="pill m">negotiated</span></td></tr>
+      <tr><td class="plat">ShopMy</td><td>Core: none · <b>Amplify</b>: buy content for brand channels / white-label ads</td><td><span class="pill m">via Amplify</span></td><td><span class="pill m">via Amplify</span></td><td class="note">unpublished</td><td><span class="pill y">paid via Amplify deals</span></td></tr>
+      <tr><td class="plat">LTK</td><td>Core: none · brand pages: "commission, license, distribute"</td><td><span class="pill m">negotiated</span></td><td><span class="pill m">negotiated</span></td><td class="note">not self-serve; sublicense right in creator ToS</td><td><span class="pill m">unclear</span></td></tr>
+      <tr class="grp"><td colspan="6">Extension round — the thesis stress-test</td></tr>
+      <tr><td class="plat">TRIBE</td><td>Organic reshare + earned media only — <b>ads excluded by default</b></td><td><span class="pill m">Content Rights license</span></td><td><span class="pill m">"Ad Boosting Rights," 7–365 days</span></td><td class="note">2×2 picker: online-only vs all-channels × 12-mo vs perpetual</td><td><span class="pill y">accept/decline per piece, priced</span></td></tr>
+      <tr><td class="plat">IZEA</td><td>Marketplace: perpetual default · Flex: negotiated usage period</td><td><span class="pill m">add-on</span></td><td><span class="pill m">negotiated, no rate card</span></td><td class="note">marketplace fee 17.5% free tier / 10% Pro</td><td><span class="pill m">"Organic Content" license for pre-existing posts — negotiated</span></td></tr>
+      <tr><td class="plat">Amazon Creator Connections</td><td>Zero — creator keeps all rights (Affiliate+)</td><td><span class="pill m">SCR: Sponsored Brands only</span></td><td><span class="pill n">n/a — Amazon ad units</span></td><td class="note">SCR ~$100–200+/asset · 90-day license + preset extension fee</td><td><span class="pill y">flat creator-set fee per asset</span></td></tr>
+      <tr><td class="plat">Social Native / Olapic</td><td>Perpetual all-channel via #YES hashtag consent — <b>unpaid</b></td><td><span class="pill y">included</span></td><td><span class="pill n">n/a in consent tool</span></td><td class="note">none for organic rights; briefs custom-priced</td><td><span class="pill n">"will not pay you" — briefs pay, rights don't</span></td></tr>
+      <tr><td class="plat">Kale</td><td>Blanket perpetual sublicensable license to Kale at signup</td><td><span class="pill y">included</span></td><td><span class="pill n">none found</span></td><td class="note">brand pricing custom, undisclosed</td><td><span class="pill n">one reward covers all uses</span></td></tr>
+      <tr><td class="plat">Collabstr</td><td>Approval-only unless the Order grants Content Rights</td><td><span class="pill m">separate consent</span></td><td><span class="pill m">off-platform via native tools</span></td><td class="note">negotiated per order, no rate card</td><td><span class="pill m">double consent at checkout, price negotiated</span></td></tr>
+      <tr><td class="plat">Upfluence</td><td>None via platform — brands negotiate rights off-platform</td><td><span class="pill n">none found</span></td><td><span class="pill n">educational guides only</span></td><td class="note">no rights fee anywhere in their contract</td><td><span class="pill m">bilateral, outside platform</span></td></tr>
+      <tr><td class="plat">Stack Influence</td><td>"Full rights" UGC license in flat $30/post fee</td><td><span class="pill m">separate consent</span></td><td><span class="pill m">per-creator auth code, unpriced</span></td><td><span class="pill n">none published</span></td><td><span class="pill n">product + occasional bonus</span></td></tr>
+    </tbody>
+  </table></div>
+  <p class="sec-sub" style="margin-top:12px">* minisocial's 30-day whitelisting appears only on a partner marketing page, not in its (2022-dated) legal docs — treated as conditional.</p>
+</section>
+
+<!-- ══════════ 03 deep dives ══════════ -->
+<section id="dives">
+  <div class="sec-head"><span class="sec-num">03 —</span><h2>The receipts worth reading</h2></div>
+  <p class="sec-sub">Twelve platforms, verbatim, with the thing worth stealing from each. The last four came from the extension round that stress-tested the thesis.</p>
+  <div class="dives">
+
+    <div class="dive hot">
+      <div class="dive-head"><h3>Social Cat</h3><span class="tagline">the one Chiara pays for</span></div>
+      <q>The Creator grants the Brand a worldwide, perpetual, royalty-free, non-exclusive licence… This includes paid ads (organic, dark posts, and platform retargeting), the Brand's owned websites and apps, organic social, email, in-store and offline marketing.</q>
+      <div class="src">thesocialcat.com/terms</div>
+      <div class="body">No rights store, no toggle, no negotiation — the license is a fixed ToS term on every plan ($99–299/mo). Their comparison page shows "Licensed content included" as a ✓ for them and an ✗ for 10 named competitors. What they apparently <b>lack</b>: true Spark Ads / partnership-ads support (per third-party sources).</div>
+      <div class="steal"><b>Steal:</b> rights-as-checkbox marketing. Also the gap — they license broadly but can't run ads from the creator's handle. We can do both.</div>
+    </div>
+
+    <div class="dive hot">
+      <div class="dive-head"><h3>Statusphere</h3><span class="tagline">closest to Tony's vision</span></div>
+      <q>Say goodbye to chasing creators for usage rights… Every post auto-bundled with pre-negotiated usage &amp; paid-media rights.</q>
+      <div class="src">joinstatus.com/rights-ready-content</div>
+      <div class="body">Contract splits organic (perpetual) from paid ads (<b>1 year</b> from first publish). Their AI "StevieOps" secures ad codes behind the scenes; brand clicks <b>buy</b>; and creators <b>"set your ad rates to earn whenever brands boost your content."</b> They name Insense's per-code fees as the villain in their sales copy.</div>
+      <div class="steal"><b>Steal:</b> the whole shape — pre-negotiated rates + one-click buy + creator-set pricing. This is the productized version of what Katie's doing manually.</div>
+    </div>
+
+    <div class="dive">
+      <div class="dive-head"><h3>#paid</h3><span class="tagline">only published price schema</span></div>
+      <q>3 months = 10% off · 6 months = 20% off · 12 months = 30% off</q>
+      <div class="src">hashtagpaid.zendesk.com — Content Usage Rights</div>
+      <div class="body">Named tiers: "Just Content" (~12-mo owned channels, default) → Creator Licensing (creator-handle ads) → Paid Social Rights (brand-handle ads) → Print/Broadcast/OOH extensions, priced per month with volume discounts. The only platform that publishes its rights-pricing logic.</div>
+      <div class="steal"><b>Steal:</b> the tier names map cleanly to how brands actually think. A future Benable rights menu could mirror this ladder.</div>
+    </div>
+
+    <div class="dive">
+      <div class="dive-head"><h3>Insense</h3><span class="tagline">the priced add-on model</span></div>
+      <q>Meta Partnership Ads: $100–150/month — TikTok Spark Ads: $100–150/month.</q>
+      <div class="src">help.insense.pro/5141</div>
+      <div class="body">Perpetual digital license vests automatically on approval + payment; whitelisting is a separate post-hire request flow, <b>default 30 days</b> when the brief is silent (confirmed in their ToS; the $100–150 figure comes from their help-center pricing chart). A G2 reviewer flags the dark side of blanket ToS consent: "creators are not aware of the platform terms (e.g. lifetime usage)."</div>
+      <div class="steal"><b>Steal:</b> the $100–150/mo whitelisting anchor. And the warning — invisible consent breeds resentment; our per-post opt-in SMS is the trust-friendly version.</div>
+    </div>
+
+    <div class="dive">
+      <div class="dive-head"><h3>Billo</h3><span class="tagline">creator-priced SKUs</span></div>
+      <q>Your right to use or display the Deliverables independently ends upon uploading them to the Billo Platform.</q>
+      <div class="src">billo.app/terms-of-service-creators</div>
+      <div class="body">Full IP <b>assignment</b> (rare — only Cohley matches it), then two à-la-carte creator-priced add-ons: organic posting (30 days) and partnership ads (Spark Ads is the TikTok format within it), price shown before purchase. Raw footage marketplace: creator sets price, Billo adds 25% for the brand, keeps 20%.</div>
+      <div class="steal"><b>Steal:</b> the raw-footage marketplace mechanics (creator price + transparent markup) — a clean model for a disclosed Benable take rate later.</div>
+    </div>
+
+    <div class="dive">
+      <div class="dive-head"><h3>Cohley</h3><span class="tagline">simplicity as the premium</span></div>
+      <q>No licensing fees, expiration dates, or surprises when you repurpose content months later.</q>
+      <div class="src">cohley.com</div>
+      <div class="body">Client owns everything, perpetual, "no hidden add-ons," and — their trust flex — <b>"Cohley never takes a cut of creator compensation."</b> Boosting codes are a workflow feature, not a SKU.</div>
+      <div class="steal"><b>Steal:</b> "no surprises months later" — the exact anxiety our brand email should pre-empt. And zero-cut-on-creator-pay as a stated trust signal (we already do this — say it).</div>
+    </div>
+
+    <div class="dive">
+      <div class="dive-head"><h3>ShopMy · Amplify</h3><span class="tagline">the disproven hypothesis</span></div>
+      <q>Purchase content directly from talent… for use on brand social channels or as white-labeled ads.</q>
+      <div class="src">shopmy.us/home/brands/amplify</div>
+      <div class="body">The belief that affiliate platforms don't touch rights is wrong — ShopMy sells them via a quietly-marketed sub-product, and LTK's brand pages offer "commission, license, and distribute." But both read as commissioning <b>new</b> content-plus-rights, not licensing already-live organic posts.</div>
+      <div class="steal"><b>Steal:</b> urgency. The adjacent platforms are already circling; the <em>retroactive, already-posted</em> wedge is still open — move while it is.</div>
+    </div>
+
+    <div class="dive">
+      <div class="dive-head"><h3>The rails</h3><span class="tagline">TikTok · Meta</span></div>
+      <q>Creators and other partners can revoke these permissions at any time.</q>
+      <div class="src">facebook.com/business/help — Partnership ads</div>
+      <div class="body">Spark Ads: creator-side codes in <b>7/30/60/365-day</b> windows (brand-initiated requests default 365), revocable — a video must be un-authorized before it can even be deleted. Meta: no expiry, revoke-anytime. Critically, <b>neither grants anything portable</b> — no raw file, no website/email use, nothing off-platform. Ad codes authorize boosting; they are not licenses.</div>
+      <div class="steal"><b>Steal:</b> the framing for brands — "an ad code is not a license." The portable, off-platform, raw-file license is precisely the thing only a deal like ours delivers.</div>
+    </div>
+
+    <div class="dive hot">
+      <div class="dive-head"><h3>TRIBE</h3><span class="tagline">the thesis-bender</span></div>
+      <q>You must not use a Post in any form of paid, sponsored or promoted advertising.</q>
+      <div class="src">tribegroup.co/toc — the default grant</div>
+      <div class="body">The one platform that productized our exact transaction: brands can <b>"request to license APPROVED and PUBLISHED content"</b> — the creator gets an in-app notification, sees the price and terms, and accepts or declines per piece. The license picker is a clean 2×2: online-only vs all-channels × 12-month vs perpetual, plus separate "Ad Boosting Rights" (7–365 days). Scope limit: it only works on TRIBE's own campaign content, not independent organic posts.</div>
+      <div class="steal"><b>Steal:</b> the 2×2 picker with a visible total before the creator is asked — it turns "buy the rights" into a two-question form, and the accept/decline screen doubles as informed consent.</div>
+    </div>
+
+    <div class="dive">
+      <div class="dive-head"><h3>IZEA Flex</h3><span class="tagline">the named category</span></div>
+      <q>…license to… distribute pre-existing content provided by the Creator solely on the Distribution Channels and for the Content Usage Period.</q>
+      <div class="src">izea.com/flex-tos — "Organic Content"</div>
+      <div class="body">The only contract in the study that <b>names</b> a paid license category for content that existed before the deal — alongside Licensed, Owned, and Sponsored Social, each with a plain-English sentence before the legal grant. But: every term is negotiated per offer, nothing is priced, and there's no self-serve checkout.</div>
+      <div class="steal"><b>Steal:</b> the four-way taxonomy. "Organic Content" is the precise name for what Benable is selling — nobody else in the study even names it.</div>
+    </div>
+
+    <div class="dive">
+      <div class="dive-head"><h3>Amazon SCR</h3><span class="tagline">capped + extendable</span></div>
+      <q>The content license is valid for 90 days. To continue using the content in ads after that period, you can extend the license by paying the pre-set rate.</q>
+      <div class="src">Amazon Creator Connections — SCR Brand Guide</div>
+      <div class="body">A genuine discrete, creator-compensated rights purchase (~$100–200+/asset, flat, creator-set) — but brief-first and locked to Amazon's own ad units, nothing off-Amazon. The creator-protective detail: <b>the fee is owed once the creator accepts, whether or not the brand uses the content.</b></div>
+      <div class="steal"><b>Steal:</b> the mechanic, not the trigger — capped license + pay-a-preset-rate-to-extend, and fee-owed-on-accept.</div>
+    </div>
+
+    <div class="dive">
+      <div class="dive-head"><h3>Olapic / Social Native</h3><span class="tagline">the cautionary giant</span></div>
+      <q>FatFace will not pay you for the use of your User Content and/or for any intellectual property rights connected with them.</q>
+      <div class="src">tos.olapic.com/fatface — live today</div>
+      <div class="body">The biggest machine in organic-UGC rights runs on <b>unpaid consent</b>: reply #YESFATFACE / #YESBIRKENSTOCK and the brand gets a perpetual, irrevocable, all-channel license — ads included — for nothing. Their modern marketplace pays creators well ($3,200 briefs), but only for commissioned content; rights on organic posts still cost brands $0 and pay creators $0.</div>
+      <div class="steal"><b>Steal:</b> their transparency language ("license terms documented on every asset") — paired with the thing they don't do: actually paying. That's Benable's trust wedge in one sentence.</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════ 04 price ladder ══════════ -->
+<section id="ladder">
+  <div class="sec-head"><span class="sec-num">04 —</span><h2>The price ladder, fact-checked</h2></div>
+  <p class="sec-sub">The breakdown you found is mostly right — it appears to descend from one Influencer Marketing Hub article. Here's each rung after cross-checking against independent sources (Modash, Impact.com, Aspire's ~900-respondent survey, IMH's clause library, Forbes, terms.law). Percentages apply to a creator's <em>cash base fee</em> — which is exactly what gifted campaigns don't have (see below).</p>
+  <div class="ladder">
+    <div class="rung free"><div class="r-name">Organic repost <small>brand's own social, credited</small></div><div class="r-body"><span class="r-price">$0</span><span class="r-note">Universally free, time-boxed 3–12 months (6 typical). Confirmed everywhere; nobody disputes it.</span></div></div>
+    <div class="rung"><div class="r-name">Dark posting <small>ads from brand's account</small></div><div class="r-body"><span class="r-price">15–20% / 30 days</span><span class="r-note">The tightest number in the whole space — Modash, Impact, IMH, and Aspire's survey (which stretches to 15–35%) all agree.</span></div></div>
+    <div class="rung"><div class="r-name">Whitelisting <small>ads from the creator's handle</small></div><div class="r-body"><span class="r-price">25–30% / 30 days</span><span class="r-note">Equally solid. Insense productizes it at $100–150/mo flat; Twirl pays creators £100/post/30d.</span></div></div>
+    <div class="rung"><div class="r-name">Website + email <small>product pages, newsletters</small></div><div class="r-body"><span class="r-price">25–40%</span><span class="r-note">Real-world asks run higher than the "~10%" in your summary — IMH's own clause library says 25–30%/30d; Impact's worked example lands at 40%.</span><span class="r-fix">corrected: was ~10%</span></div></div>
+    <div class="rung"><div class="r-name">Out-of-home <small>billboards, in-store</small></div><div class="r-body"><span class="r-price">30–50%</span><span class="r-note">The "20%+" floor is technically true but understated — quotes cluster at 30–50%, ambassador-tier territory.</span><span class="r-fix">corrected: was 20%+</span></div></div>
+    <div class="rung"><div class="r-name">Raw footage <small>the unwatermarked file</small></div><div class="r-body"><span class="r-price">+20–30% <small style="font-family:var(--sans);font-size:12px;color:var(--ink-soft)">(UGC-market sources: 50–100%)</small></span><span class="r-note">Sources genuinely disagree — IMH says 20–30%; UGC-specific guides say 50–100%. We ask for the raw file in every deal; it's a bigger ask than it looks.</span></div></div>
+    <div class="rung"><div class="r-name">Perpetuity <small>no end date</small></div><div class="r-body"><span class="r-price">2–5× base, one-time</span><span class="r-note">Nobody prices perpetuity per-month — it's a lump-sum multiplier (Forbes: 3–5×; IMH/terms.law templates: 200–300%). Exclusivity is a separate 25–100%+ stack on top.</span><span class="r-fix">reframed: not per-month</span></div></div>
+  </div>
+</section>
+
+<!-- ══════════ 05 the $75 question ══════════ -->
+<section id="seventyfive">
+  <div class="sec-head"><span class="sec-num">05 —</span><h2>So is $50–100 flat fair?</h2></div>
+  <div class="verdict-box">
+    <h3>The market has no price for our exact transaction — which cuts in our favor, with one caveat.</h3>
+    <p><b>No published framework prices "rights-only, after the fact, on already-posted gifted content."</b> Every % above assumes a cash base fee that gifted campaigns don't have. The honest zero-point for a gift is <b>$0</b> — per the Creators Guild of America, a true gift obligates the creator to nothing, so any cash offered afterward is an upgrade on the norm, not a discount from it.</p>
+    <p>Anchors: a nano creator's <b>entire new paid post</b> runs $50–300 all-in (Later's benchmarks); UGC flat licensing runs ~$150–300/video; and the 2–5× perpetuity multiplier applied to a notional nano base implies $100–1,500 — but that heuristic was built for paid productions with exclusivity risk, which this isn't.</p>
+    <p class="verdict-line"><b>Verdict:</b> $50–100 is fair-to-generous for nano and lower-micro creators (the bulk of our roster) — <b>as long as the grant stays narrow-ish and we frame it as "cash on top of the product you already received."</b> The caveat: our bundle includes raw files + paid ads + perpetuity, which the market prices as stacking premiums. For a savvier 25–50K creator, expect counters in the $150–500 range — which is exactly why the email now promises "we'll negotiate and do our best" instead of a fixed outcome, and why the SMS decline reply asks for their number.</p>
+  </div>
+</section>
+
+<!-- ══════════ 06 so what ══════════ -->
+<section id="sowhat">
+  <div class="sec-head"><span class="sec-num">06 —</span><h2>What this changes</h2></div>
+  <div class="sowhat">
+    <div class="sw now">
+      <span class="sw-tag">For Friday's manual test</span>
+      <h3>Small edits, better armor</h3>
+      <ul>
+        <li><b>The negotiation close was the right call.</b> Creators may counter above band — the market says $150–500 is a plausible ask for what we're bundling. Best-effort language keeps every promise keepable.</li>
+        <li><b>Lead with what an ad code can't do.</b> Chiara can get Spark codes elsewhere; only a license gets her the raw file, her website, her emails, forever. That's the differentiated half of our pitch.</li>
+        <li><b>Say the pass-through out loud.</b> Cohley markets "we never take a cut of creator compensation" as a trust feature. We already do this — it belongs in the email ("the full amount goes to the creator").</li>
+        <li><b>Raw file = real value.</b> Sources price it at +20–100%. If a creator balks, offering "posted version only, lower price" is a legitimate fallback tier, not a failure.</li>
+        <li><b>Pre-empt "surprises months later."</b> The plain-English license recap we send after purchase is exactly the anxiety-killer the market messaging targets. Keep it.</li>
+      </ul>
+    </div>
+    <div class="sw later">
+      <span class="sw-tag">For the product</span>
+      <h3>The whitespace, mapped</h3>
+      <ul>
+        <li><b>The wedge is real, but claim it precisely.</b> TRIBE productized post-hoc licensing (2×2 picker, creator accepts a visible price) on its own campaign content; IZEA names "Organic Content" licensing but prices nothing; Amazon caps it at 90 days of Amazon-only ads. Still unclaimed: flat-price, pass-through, creator-paid rights on <b>gifted-campaign</b> content — and truly independent organic posts, which today only unpaid Olapic-style consent-harvesting touches.</li>
+        <li><b>Two products, not one:</b> rights-in-the-brief (match Social Cat's bundled parity — the Just Juice play) and the retroactive rights store (the differentiator). Don't let the second get built as a discount version of the first.</li>
+        <li><b>Duration menu should mirror the rails:</b> 30 days (the whitelisting default everywhere), 1 year (Statusphere's paid-ads term, Spark's max code), perpetual (the license the rails can't grant). Three tiers, done.</li>
+        <li><b>Creator-set rates with a floor</b> — creators told us they want auto-negotiation with a minimum (Sophia's call, April). Statusphere proves the mechanic ships.</li>
+        <li><b>Disclose the take rate when we add one.</b> Nobody in the market prices a rights-specific cut cleanly; Billo's raw-footage marketplace (creator price + transparent markup) is the model worth copying.</li>
+        <li><b>Revocability is table stakes on the rails</b> — every native mechanism lets creators pull access anytime. A perpetual license is our differentiator, but likeness-based takedown paths (Twirl's 12-month right, Skeepers' 20-year cap) are the humane precedents to study before productizing.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ 07 verification ══════════ -->
+<style>
+.uiplat{background:var(--card,#fffdf9);border:1px solid var(--rule,#e2d9c8);border-radius:16px;padding:24px 26px;margin-bottom:18px;box-shadow:var(--shadow,0 2px 3px rgba(50,40,20,.05))}
+.uiplat.ref{border:1.5px solid var(--purple,#7a5cfa)}
+.uihead{display:flex;align-items:baseline;gap:12px;margin-bottom:14px}
+.uihead h3{font-family:var(--serif,Georgia);font-size:21px;font-weight:520}
+.uitag{font-family:var(--mono,monospace);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--flag,#d94f1e)}
+.uiflows{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-bottom:16px}
+.uicol h4{font-family:var(--mono,monospace);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--purple,#5b3fd4);margin-bottom:8px}
+.usteps{list-style:none;margin:0;padding:0;counter-reset:us}
+.usteps li{counter-increment:us;position:relative;padding:0 0 10px 30px;font-size:13.5px;line-height:1.5;color:var(--ink-soft,#5c554a)}
+.usteps li::before{content:counter(us);position:absolute;left:0;top:1px;width:19px;height:19px;border:1.5px solid var(--rule,#e2d9c8);border-radius:50%;font-family:var(--mono,monospace);font-size:10px;display:flex;align-items:center;justify-content:center;color:var(--ink,#1d1a15);background:var(--paper-deep,#f3ecdf)}
+.usteps b{color:var(--ink,#1d1a15)}
+.uc{display:inline-block;font-family:var(--mono,monospace);font-size:11px;background:var(--paper-deep,#f3ecdf);border:1px solid var(--rule,#d8cfbc);border-radius:6px;padding:1px 7px;margin:1px 2px;white-space:nowrap;color:var(--ink,#1d1a15)}
+.shotstrip{display:flex;gap:10px;overflow-x:auto;padding:4px 0 6px}
+.shotstrip figure{margin:0;flex:0 0 auto;max-width:230px}
+.shotstrip img{height:150px;width:auto;max-width:230px;object-fit:cover;object-position:top;border:1px solid var(--rule,#e2d9c8);border-radius:8px;background:#fff;display:block}
+.shotstrip figcaption{font-size:11px;color:var(--ink-faint,#948b7d);margin-top:4px;line-height:1.35;max-width:230px}
+.moments{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:0 0 26px}
+.moment{background:var(--paper-deep,#f3ecdf);border:1px solid var(--rule,#e2d9c8);border-radius:12px;padding:14px 16px;font-size:13px;line-height:1.45;color:var(--ink-soft,#5c554a)}
+.moment b{display:block;color:var(--ink,#1d1a15);margin-bottom:3px}
+.absentstrip{background:var(--card,#fffdf9);border:1.5px dashed var(--rule,#d8cfbc);border-radius:14px;padding:18px 22px;font-size:14px;color:var(--ink-soft,#5c554a);line-height:1.6}
+@media (max-width:760px){.uiflows{grid-template-columns:1fr}.moments{grid-template-columns:1fr 1fr}}
+</style>
+
+<section id="screens">
+  <div class="sec-head"><span class="sec-num">07 —</span><h2>The screens themselves</h2></div>
+  <p class="sec-sub">What brands and creators actually see, reconstructed from help-center walkthroughs and product docs — 58 screenshots archived locally in <span class="uc">ui-shots/</span> so they survive link rot. Every chip below is verbatim on-screen text. The pattern across all 25 platforms: rights UI concentrates at four moments.</p>
+
+  <div class="moments">
+    <div class="moment"><b>1 · The brief</b> Rights terms set before content exists — Aspire's duration dropdown, IZEA's usage-period picker, Insense's campaign-goal fork.</div>
+    <div class="moment"><b>2 · The checkout</b> Rights as a line item at purchase — Billo's tier table, Collabstr's usage-rights field, TRIBE's 2×2 picker.</div>
+    <div class="moment"><b>3 · The approval</b> Clicking "approve" IS the rights transfer — soona says it outright; Social Cat does it silently on upload.</div>
+    <div class="moment"><b>4 · The handoff</b> Ad permissions finish on Meta/TikTok's own screens — every platform eventually ejects to a native consent sheet.</div>
+  </div>
+
+  <div class="uiplat ref">
+    <div class="uihead"><h3>TRIBE</h3><span class="uitag">the reference flow — closest to what we'd build</span></div>
+    <div class="uiflows">
+      <div class="uicol"><h4>Brand sees</h4>
+        <ol class="usteps">
+          <li>On any approved &amp; published post: a <span class="uc">License Content</span> button.</li>
+          <li>The 2×2 picker — <span class="uc">online or all channels</span> × <span class="uc">12 months or perpetual</span>.</li>
+          <li>Price + specs check before committing: <b>"Check the total price, and ensure the resolution and specs suit your needs."</b></li>
+          <li>Ads are a separate flow: click <span class="uc">Boost</span>, pick 7/30/60/365 days, request goes to the creator.</li>
+        </ol>
+      </div>
+      <div class="uicol"><h4>Creator sees</h4>
+        <ol class="usteps">
+          <li>Push notification: <b>"A brand has requested to license your content."</b></li>
+          <li>In-app: <span class="uc">POSTS</span> → <span class="uc">Requested</span> tab under Content Rights — the request card shows a <b>fixed, non-negotiable price</b>.</li>
+          <li>Prompted to read the Content Rights Terms — told the post stays on their profile but can't be reused elsewhere once licensed.</li>
+          <li>Two buttons: <span class="uc">Decline</span> <span class="uc">Accept</span> — accepting starts payout (48h or 45d).</li>
+        </ol>
+      </div>
+    </div>
+    <div class="shotstrip">
+      <figure><a href="ui-shots/tribe-tribegroup-co-0.gif" target="_blank"><img src="ui-shots/tribe-tribegroup-co-0.gif" alt=""></a><figcaption>Animated licensing walkthrough incl. the 2×2 picker</figcaption></figure>
+      <figure><a href="ui-shots/tribe-tribegroup-co-4.png" target="_blank"><img src="ui-shots/tribe-tribegroup-co-4.png" alt=""></a><figcaption>License modal: rights option × usage term</figcaption></figure>
+      <figure><a href="ui-shots/tribe-tribegroup-co-5.png" target="_blank"><img src="ui-shots/tribe-tribegroup-co-5.png" alt=""></a><figcaption>Final licensing modal with price breakdown</figcaption></figure>
+      <figure><a href="ui-shots/tribe-tribegroup-co-1.png" target="_blank"><img src="ui-shots/tribe-tribegroup-co-1.png" alt=""></a><figcaption>Creator app: the license request card</figcaption></figure>
+    </div>
+  </div>
+
+  <div class="uiplat">
+    <div class="uihead"><h3>Statusphere</h3><span class="uitag">the one-click buy + creator-set rates</span></div>
+    <div class="uiflows">
+      <div class="uicol"><h4>Brand sees</h4>
+        <ol class="usteps">
+          <li>StevieOps pipeline reaches a Boost step where the ad code is already secured: <b>"Click 'buy,' copy the code, and boost right away."</b></li>
+          <li>A rights dashboard: <b>"All content, rights &amp; performance — one central dashboard. Every post auto-bundled with pre-negotiated usage &amp; paid-media rights."</b></li>
+          <li>Then ejects to TikTok Ads Manager: <span class="uc">Apply for Authorization</span>, paste code.</li>
+        </ol>
+      </div>
+      <div class="uicol"><h4>Creator sees</h4>
+        <ol class="usteps">
+          <li>Onboarding step 4, before any campaign: <b>"Set your ad rates to earn whenever brands boost your content."</b></li>
+          <li>Their FAQ anchors the price: <b>"Statusphere creators charge brands $100 per ad code on average."</b></li>
+          <li>Code generation happens on Instagram's native screens: <span class="uc">Partnership label &amp; ads</span> → <span class="uc">Get partnership ad code</span>.</li>
+        </ol>
+      </div>
+    </div>
+    <div class="shotstrip">
+      <figure><a href="ui-shots/statusphere-joinstatus-c-0.png" target="_blank"><img src="ui-shots/statusphere-joinstatus-c-0.png" alt=""></a><figcaption>Smart Boost — the 1-click ad-code buy</figcaption></figure>
+      <figure><a href="ui-shots/statusphere-joinstatus-c-5.png" target="_blank"><img src="ui-shots/statusphere-joinstatus-c-5.png" alt=""></a><figcaption>Creator onboarding: "Set your ad rates"</figcaption></figure>
+      <figure><a href="ui-shots/statusphere-joinstatus-c-3.png" target="_blank"><img src="ui-shots/statusphere-joinstatus-c-3.png" alt=""></a><figcaption>Campaign setup: pick creators to whitelist</figcaption></figure>
+    </div>
+  </div>
+
+  <div class="uiplat">
+    <div class="uihead"><h3>Insense</h3><span class="uitag">rights as a campaign-goal fork</span></div>
+    <div class="uiflows">
+      <div class="uicol"><h4>Brand sees</h4>
+        <ol class="usteps">
+          <li>The brief starts with a strategy picker where <span class="uc">Meta Partnership Ads</span> and <span class="uc">TikTok Spark Ads</span> sit alongside UGC as campaign types — the rights model is chosen before creators are.</li>
+          <li>Ad-license duration set in the brief; price scales with it.</li>
+          <li>One-click handle connect: <b>"Connect to a creator's handle with a single click; choose the duration of the partnership."</b></li>
+          <li>Approving content + paying auto-logs <b>"full digital usage right"</b> in a Payments &amp; Copyrights record.</li>
+        </ol>
+      </div>
+      <div class="uicol"><h4>Creator sees</h4>
+        <ol class="usteps">
+          <li>Applying to a campaign auto-accepts the brief's terms — no separate contract.</li>
+          <li>Whitelisting: connect Facebook inside the Insense app, grant permissions in ~5 taps, no password shared.</li>
+          <li>Spark codes: generated on TikTok's native screens (<span class="uc">Ad authorization</span> → <span class="uc">Generate code</span>), pasted into Insense chat.</li>
+        </ol>
+      </div>
+    </div>
+    <div class="shotstrip">
+      <figure><a href="ui-shots/insense-insense-pro-4.png" target="_blank"><img src="ui-shots/insense-insense-pro-4.png" alt=""></a><figcaption>Brief: Partnership Ads as a campaign goal</figcaption></figure>
+      <figure><a href="ui-shots/insense-insense-pro-2.png" target="_blank"><img src="ui-shots/insense-insense-pro-2.png" alt=""></a><figcaption>One-click connection to a creator's handle</figcaption></figure>
+      <figure><a href="ui-shots/insense-insense-pro-1.png" target="_blank"><img src="ui-shots/insense-insense-pro-1.png" alt=""></a><figcaption>Creator grants ad permissions, ~5 taps</figcaption></figure>
+      <figure><a href="ui-shots/insense-insense-pro-5.png" target="_blank"><img src="ui-shots/insense-insense-pro-5.png" alt=""></a><figcaption>Spark code handed over in chat</figcaption></figure>
+    </div>
+  </div>
+
+  <div class="uiplat">
+    <div class="uihead"><h3>Billo + soona/Trend</h3><span class="uitag">rights tiers priced at checkout vs. rights on approve</span></div>
+    <div class="uiflows">
+      <div class="uicol"><h4>Brand sees</h4>
+        <ol class="usteps">
+          <li>Billo checkout step 1 is the rights fork: <span class="uc">Creator video ad</span> vs <span class="uc">Organic video post + partnership ads</span>.</li>
+          <li>A compare table prices the tiers: organic post vs <span class="uc">Content-level ads</span> vs <span class="uc">Account-level ads</span> — price per creator updates live.</li>
+          <li>Whitelisting tracked post-order: <span class="uc">Manage Campaigns → Partnership Ads</span> with <span class="uc">Pending</span>/<span class="uc">Accepted</span>/<span class="uc">Declined</span> per creator.</li>
+          <li>soona's version is one sentence on the Approvals tab: approving content grants <b>100% usage rights, forever</b>.</li>
+        </ol>
+      </div>
+      <div class="uicol"><h4>Creator sees</h4>
+        <ol class="usteps">
+          <li>A native Instagram push: <b>"billo.app approved you to add them to branded content and requested your approval to run partnership ads."</b></li>
+          <li>Meta's own consent sheet lists exactly what the brand can do — approve or decline in one tap.</li>
+          <li>A help-center graphic shows <span class="uc">Brand-Owned Ad</span> vs <span class="uc">Whitelisted Ad</span> side-by-side so creators understand what they're granting.</li>
+        </ol>
+      </div>
+    </div>
+    <div class="shotstrip">
+      <figure><a href="ui-shots/trend-io-soona-ugc-trend-2.png" target="_blank"><img src="ui-shots/trend-io-soona-ugc-trend-2.png" alt=""></a><figcaption>Billo's license-tier compare table</figcaption></figure>
+      <figure><a href="ui-shots/trend-io-soona-ugc-trend-1.png" target="_blank"><img src="ui-shots/trend-io-soona-ugc-trend-1.png" alt=""></a><figcaption>Distribution-goal checkboxes, price updates live</figcaption></figure>
+      <figure><a href="ui-shots/trend-io-soona-ugc-trend-3.png" target="_blank"><img src="ui-shots/trend-io-soona-ugc-trend-3.png" alt=""></a><figcaption>soona Approvals tab: approve = rights forever</figcaption></figure>
+      <figure><a href="ui-shots/trend-io-soona-ugc-trend-4.png" target="_blank"><img src="ui-shots/trend-io-soona-ugc-trend-4.png" alt=""></a><figcaption>Creator's Meta consent sheet</figcaption></figure>
+    </div>
+  </div>
+
+  <div class="uiplat">
+    <div class="uihead"><h3>Amazon SCR</h3><span class="uitag">the license terms printed in the brief</span></div>
+    <div class="uiflows">
+      <div class="uicol"><h4>Brand sees</h4>
+        <ol class="usteps">
+          <li>Console tabs track rights state end-to-end: <span class="uc">Drafts</span> <span class="uc">Sent requests</span> <span class="uc">Declined offers</span> <span class="uc">Accepted requests</span> <span class="uc">Content submissions</span> <span class="uc">Completed</span>.</li>
+          <li>The brief states the license in one line: <b>"Usage rights for all content is limited to 90 days, in accordance with creator rate minimums."</b></li>
+          <li>Approval modal has a compliance checklist and a single gate: <span class="uc">Does this content meet all requirements? Yes / No</span>.</li>
+        </ol>
+      </div>
+      <div class="uicol"><h4>Creator sees</h4>
+        <ol class="usteps">
+          <li>Brief review with 5 business days to <span class="uc">Accept</span> or <span class="uc">Not Interested</span>.</li>
+          <li>No separate rights screen — accepting locks the fee, <b>owed regardless of whether the brand uses the content</b>.</li>
+          <li>Posting live + submitting the link starts the 90-day clock automatically.</li>
+        </ol>
+      </div>
+    </div>
+    <div class="shotstrip">
+      <figure><a href="ui-shots/amazon-creator-connectio-0.png" target="_blank"><img src="ui-shots/amazon-creator-connectio-0.png" alt=""></a><figcaption>Creator Connections console: Create campaign</figcaption></figure>
+      <figure><a href="ui-shots/amazon-creator-connectio-1.png" target="_blank"><img src="ui-shots/amazon-creator-connectio-1.png" alt=""></a><figcaption>Creator selection with asking rates</figcaption></figure>
+      <figure><a href="ui-shots/amazon-creator-connectio-2.png" target="_blank"><img src="ui-shots/amazon-creator-connectio-2.png" alt=""></a><figcaption>Approval modal with compliance checklist</figcaption></figure>
+    </div>
+  </div>
+
+  <div class="uiplat">
+    <div class="uihead"><h3>ShopMy Spotlights</h3><span class="uitag">consent as a standing setting</span></div>
+    <div class="uiflows">
+      <div class="uicol"><h4>Brand sees</h4>
+        <ol class="usteps">
+          <li>A <b>Mentions</b> feed of the creator's organic brand-tagged posts — the discovery surface for content worth boosting.</li>
+          <li>Rights are NOT automatic: the help center supplies ask-permission message templates for reposts.</li>
+          <li>Spotlight request = ad spend on a creator's existing post, from her handle.</li>
+        </ol>
+      </div>
+      <div class="uicol"><h4>Creator sees</h4>
+        <ol class="usteps">
+          <li>The genuinely novel control — a standing approval mode: <span class="uc">Instant Spotlights (recommended)</span> auto-approves all brands, <span class="uc">Ask Me Every Time</span> reviews each.</li>
+          <li>Per-request card shows the post, the brand, and the commission rate offered.</li>
+          <li>Live kill-switch: pause any running Spotlight anytime; the brand can't override, and <b>"the ad runs under your handle and cannot be edited or altered in any way."</b></li>
+        </ol>
+      </div>
+    </div>
+    <div class="shotstrip">
+      <figure><a href="ui-shots/shopmy-amplify-spotlight-0.png" target="_blank"><img src="ui-shots/shopmy-amplify-spotlight-0.png" alt=""></a><figcaption>Amplify: "Own the content creators make for you"</figcaption></figure>
+      <figure><a href="ui-shots/shopmy-amplify-spotlight-1.png" target="_blank"><img src="ui-shots/shopmy-amplify-spotlight-1.png" alt=""></a><figcaption>Creator's Spotlights setup modal</figcaption></figure>
+      <figure><a href="ui-shots/shopmy-amplify-spotlight-3.png" target="_blank"><img src="ui-shots/shopmy-amplify-spotlight-3.png" alt=""></a><figcaption>All Mentions: a creator's brand-tagged posts</figcaption></figure>
+    </div>
+  </div>
+
+  <div class="uiplat">
+    <div class="uihead"><h3>Olapic / Social Native</h3><span class="uitag">rights at industrial scale — and the modern rewrite</span></div>
+    <div class="uiflows">
+      <div class="uicol"><h4>Brand sees</h4>
+        <ol class="usteps">
+          <li>Legacy: a <span class="uc">Moderation Queue</span> of 30,000 assets with a <span class="uc">Rights Status</span> filter — approve/reject grid, rights tracked as a binary flag.</li>
+          <li>Modern: per-asset rights panel — <span class="uc">License type</span> <span class="uc">Channels</span> <span class="uc">Geography</span> <span class="uc">Duration</span> <span class="uc">Exclusivity</span> — plus an advisory AI review scoring content against the brief.</li>
+        </ol>
+      </div>
+      <div class="uicol"><h4>Creator sees</h4>
+        <ol class="usteps">
+          <li>Legacy (still live): a brand comment — <b>"By responding #YestoTommy you agree to the following"</b> — where the hashtag reply IS the perpetual, unpaid license.</li>
+          <li>Opting out means emailing a named brand contact.</li>
+          <li>Modern briefs bundle rights invisibly: <b>"Dr. Martens · contract, usage rights, payout — all handled."</b></li>
+        </ol>
+      </div>
+    </div>
+    <div class="shotstrip">
+      <figure><a href="ui-shots/social-native-formerly-o-0.png" target="_blank"><img src="ui-shots/social-native-formerly-o-0.png" alt=""></a><figcaption>The Olapic moderation queue, Rights Status filter</figcaption></figure>
+      <figure><a href="ui-shots/social-native-formerly-o-2.png" target="_blank"><img src="ui-shots/social-native-formerly-o-2.png" alt=""></a><figcaption>#yespetsmart — the hashtag-consent ask in the wild</figcaption></figure>
+      <figure><a href="ui-shots/social-native-formerly-o-1.jpg" target="_blank"><img src="ui-shots/social-native-formerly-o-1.jpg" alt=""></a><figcaption>Modern Social Native review modal with AI scoring</figcaption></figure>
+    </div>
+  </div>
+
+  <div class="uiplat">
+    <div class="uihead"><h3>The brief-builders</h3><span class="uitag">IZEA · Aspire · GRIN · Later · Collabstr · Social Cat — rights as form fields</span></div>
+    <div class="uiflows">
+      <div class="uicol"><h4>Brand sees</h4>
+        <ol class="usteps">
+          <li><b>IZEA Flex:</b> <span class="uc">Content Usage Terms</span> picker — 12, 24, 36 months, perpetual, or custom, <b>12 months is the system default</b> — plus a <span class="uc">Paid Media</span> Yes/No toggle (default Yes) and an <span class="uc">Exclusivity Period</span> field.</li>
+          <li><b>Aspire:</b> Standard Brief has a usage-duration dropdown (<span class="uc">3 months, 6 months, 1 year, or Custom</span>) and an <span class="uc">Ad Rights</span> toggle; the content library filters by <span class="uc">content usage rights</span>.</li>
+          <li><b>GRIN:</b> <span class="uc">Authorization Period</span> for TikTok Spark Ads + an after-the-fact <span class="uc">Ad authorization</span> request.</li>
+          <li><b>Later:</b> no structured field at all — rights language typed into a free-text brief; Partnership Ads tracked per-post (<span class="uc">Request</span> → <span class="uc">Add to Ads Manager</span> / <span class="uc">Permission Denied</span>).</li>
+          <li><b>Collabstr:</b> a <span class="uc">Usage rights</span> free-text field at checkout, in escrow until the creator accepts.</li>
+          <li><b>Social Cat:</b> a contract modal (type, fee, deadline, deliverables) — but <b>no rights language anywhere in the flow</b>; downloads are just <span class="uc">Save As</span>.</li>
+        </ol>
+      </div>
+      <div class="uicol"><h4>Creator sees</h4>
+        <ol class="usteps">
+          <li><b>IZEA:</b> offer-review page with a terms section covering payment + content usage, then <span class="uc">Accept Offer</span> / <span class="uc">Negotiate</span> / <span class="uc">Decline Offer</span> — the only brief-builder with a built-in counter path.</li>
+          <li><b>GRIN:</b> a mandatory <span class="uc">Content Rights</span> step in the proposal wizard — terms must be accepted to proceed.</li>
+          <li><b>Collabstr:</b> order card with <span class="uc">Content Requirements</span> (usage rights inside) and 72 hours to accept.</li>
+          <li><b>Social Cat:</b> nothing — creators learn brands get usage rights from a help-center FAQ, and uploading content silently transfers the license.</li>
+        </ol>
+      </div>
+    </div>
+    <div class="shotstrip">
+      <figure><a href="ui-shots/aspire-grin-and-later-in-1.png" target="_blank"><img src="ui-shots/aspire-grin-and-later-in-1.png" alt=""></a><figcaption>Aspire Standard Brief: usage rights + Ad Rights fields</figcaption></figure>
+      <figure><a href="ui-shots/izea-flex-the-creator-ma-3.png" target="_blank"><img src="ui-shots/izea-flex-the-creator-ma-3.png" alt=""></a><figcaption>IZEA creator side: Accept / Negotiate / Decline</figcaption></figure>
+      <figure><a href="ui-shots/collabstr-2.jpg" target="_blank"><img src="ui-shots/collabstr-2.jpg" alt=""></a><figcaption>Collabstr creator order card, 72h to accept</figcaption></figure>
+      <figure><a href="ui-shots/social-cat-thesocialcat-1.png" target="_blank"><img src="ui-shots/social-cat-thesocialcat-1.png" alt=""></a><figcaption>Social Cat contract modal — no rights language</figcaption></figure>
+      <figure><a href="ui-shots/social-cat-thesocialcat-4.png" target="_blank"><img src="ui-shots/social-cat-thesocialcat-4.png" alt=""></a><figcaption>Upload modal — the silent license transfer</figcaption></figure>
+    </div>
+  </div>
+
+  <div class="absentstrip">
+    <b>Where the rights UI is the absence of UI:</b> minisocial (rights live in the signed MSA — content just appears as downloads), Stack Influence ("full usage rights" is a marketing line next to a download button; whitelisting codes auto-requested behind the scenes), Kale (the license is granted at account creation — the challenge flow never mentions it), Upfluence (contracts are uploaded PDFs; whitelisting walkthroughs point at Meta's native screens), and LTK (no rights surface found anywhere in LTK Connect's documentation trail). For these platforms the entire rights experience is a clause the creator agreed to before any specific post existed — which is exactly the opacity a visible, per-post, paid consent screen can beat.
+  </div>
+</section>
+
+<section id="verification">
+  <div class="sec-head"><span class="sec-num">08 —</span><h2>Verification appendix</h2></div>
+  <p class="sec-sub" id="verif-status">Round 1 — eight load-bearing claims re-checked against primary sources: <b>5 confirmed · 3 partial (corrected in place above) · 0 refuted</b>. Round 2 (extension) — eleven checks across the four thesis-critical platforms: <b>10 confirmed · 1 unreachable · 0 refuted</b>.</p>
+  <div class="verif"><table class="vt" id="verif-table">
+    <thead><tr><th>Claim</th><th>Verdict</th><th>Evidence / correction</th></tr></thead>
+    <tbody id="verif-body">
+      <tr><td class="claim-c">Social Cat: perpetual, ads-inclusive license bundled on every tier at no extra cost</td><td><span class="pill y">CONFIRMED</span></td><td class="ev">ToS: "worldwide, perpetual, royalty-free, non-exclusive licence… includes paid ads (organic, dark posts, and platform retargeting)…" — and all three pricing tiers ($99/$199/$299) list "Content usage rights for all content."</td></tr>
+      <tr><td class="claim-c">Statusphere: organic perpetual, paid ads capped at 1 year; creators set their own ad rates</td><td><span class="pill y">CONFIRMED</span></td><td class="ev">Brand-Creator Terms §6.4 splits the perpetual organic license from a paid-advertising license "solely for a period of one (1) year from the date the Creator Content is first published." Creator page: "Set your ad rates to earn whenever brands boost your content."</td></tr>
+      <tr><td class="claim-c">#paid: named rights tiers + published volume discounts (3/6/12 months = 10/20/30% off)</td><td><span class="pill y">CONFIRMED</span></td><td class="ev">Tier names and exact discounts match. Caveat: #paid's help center bot-blocks direct fetches, so confirmation used indexed excerpts of the same articles; the ~12-month organic default cross-checks against #paid's own ToS (1-year standardized license).</td></tr>
+      <tr><td class="claim-c">TikTok Spark Ads: 7/30/60/365-day authorization; 365-day default for brand-initiated requests</td><td><span class="pill m">PARTIAL</span></td><td class="ev">Durations and the 365 default confirmed verbatim in TikTok's help articles. The exact creator-side un-authorize path isn't spelled out — docs only state a video "needs to be un-authorized as a Spark Ad before it can be deleted."</td></tr>
+      <tr><td class="claim-c">Insense: whitelisting $100–150/month; 30-day default paid-usage duration</td><td><span class="pill m">PARTIAL</span></td><td class="ev">ToS confirms: "if it is not provided for, then the default duration shall be 30 days." The $100–150/mo figure lives in an embedded pricing chart on the help page that can't be text-verified — treat as Insense's own chart, not quotable contract language.</td></tr>
+      <tr><td class="claim-c">Billo: full worldwide IP assignment bundled in the order fee; creator-priced 30-day ad add-ons</td><td><span class="pill m">PARTIAL</span></td><td class="ev">§8.1 assignment confirmed verbatim ("irrevocably assign and transfer… all rights, title, and interest"). Correction: two add-ons, not three — Organic Posting (explicitly 30 days) and Partnership Ads (Spark Ads is a TikTok format within it, no stated duration in that article).</td></tr>
+      <tr><td class="claim-c">ShopMy sells rights via Amplify; LTK offers "commission, license, and distribute"</td><td><span class="pill y">CONFIRMED</span></td><td class="ev">Amplify page: "Own the content creators make for you. Purchase content directly from talent… as white-labeled advertising." LTK brand page: "Commission, license, and distribute Creator content for your marketing channels."</td></tr>
+      <tr><td class="claim-c">Benchmarks: dark posting 15–20%/30d, whitelisting 25–30%/30d, perpetuity 3–5× base</td><td><span class="pill y">CONFIRMED</span></td><td class="ev">Modash: "15–20% of the base rate for paid media usage rights for 30 days," "25–30%… for influencer whitelisting for 30 days." Forbes (May 2025): perpetual licensing "often 3x to 5x the standard rate."</td></tr>
+      <tr><td class="claim-c">R2 · TRIBE: post-hoc licensing of published campaign content; default grant excludes paid ads</td><td><span class="pill y">CONFIRMED</span></td><td class="ev">Help center: brands "request to license APPROVED and PUBLISHED content"; "The creator will be notified of your request, and accept if they are willing to sell you the rights." ToS: "you must not use a Post in any form of paid, sponsored or promoted advertising."</td></tr>
+      <tr><td class="claim-c">R2 · Olapic/Social Native: perpetual all-channel rights via hashtag consent, explicitly unpaid</td><td><span class="pill y">CONFIRMED</span></td><td class="ev">Live at tos.olapic.com/fatface: "FatFace will not pay you for the use of your User Content and/or for any intellectual property rights connected with them" — grant is "worldwide, perpetual, irrevocable, royalty-free." Marketplace pays for briefed content only ("usage rights cleared upfront").</td></tr>
+      <tr><td class="claim-c">R2 · Kale: blanket perpetual sublicensable license at signup; one reward covers all uses</td><td><span class="pill y">CONFIRMED</span></td><td class="ev">Terms of Use verbatim: "You hereby grant to Kale a non-exclusive, perpetual, sublicensable, worldwide, royalty-free license…" Brands page: "you own content rights from day one." No per-post rights payment exists.</td></tr>
+      <tr><td class="claim-c">R2 · Collabstr: usage-rights field at checkout with creator double-consent; approval-only default license</td><td><span class="pill m">1 UNREACHABLE</span></td><td class="ev">Help article confirmed verbatim ("once the creator accepts, those rights are officially granted"). The ToS default-license quote couldn't be re-fetched — collabstr.com/terms returns 403 to fetch tools; verify in a browser before quoting externally.</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<footer>
+  <span>benable · ugc rights market study · aug 6 2026</span>
+  <span>sources: official ToS, help centers &amp; pricing pages · % figures are directional industry norms, not audited data</span>
+</footer>
+
+</div>
+</body>
+</html>

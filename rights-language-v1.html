@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UGC Rights — The Language · proof v1</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Spline+Sans+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#faf6ef;
+  --paper-deep:#f3ecdf;
+  --ink:#1d1a15;
+  --ink-soft:#5c554a;
+  --ink-faint:#948b7d;
+  --rule:#e2d9c8;
+  --card:#fffdf9;
+  --purple:#7a5cfa;
+  --purple-deep:#5b3fd4;
+  --purple-tint:#efeaff;
+  --flag:#d94f1e;
+  --flag-tint:#fdeade;
+  --green:#2e7d4f;
+  --green-tint:#e3f2e8;
+  --blue-bubble:#3d8bfd;
+  --shadow:0 2px 3px rgba(50,40,20,.05),0 14px 34px rgba(50,40,20,.09);
+  --serif:"Fraunces",Georgia,serif;
+  --sans:"Instrument Sans","Helvetica Neue",sans-serif;
+  --mono:"Spline Sans Mono",ui-monospace,monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--sans);
+  font-size:16px;
+  line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+}
+/* paper grain */
+body::before{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.5;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0.45 0 0 0 0 0.4 0 0 0 0 0.3 0 0 0 0.05 0'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+.wrap{position:relative;z-index:1;max-width:1060px;margin:0 auto;padding:0 32px 120px}
+
+/* ───────── masthead ───────── */
+header{padding:76px 0 30px;border-bottom:2px solid var(--ink)}
+.kicker{font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--flag);display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.kicker .dot{width:7px;height:7px;border-radius:50%;background:var(--flag);display:inline-block}
+h1{font-family:var(--serif);font-weight:390;font-size:clamp(46px,7.2vw,84px);line-height:1.0;letter-spacing:-.015em;margin:18px 0 10px}
+h1 em{font-style:italic;font-weight:340;color:var(--purple-deep)}
+.dek{font-size:18px;color:var(--ink-soft);max-width:640px;font-weight:400}
+.dek strong{color:var(--ink);font-weight:600}
+
+/* sequencing strip */
+.seq{display:flex;gap:0;margin:34px 0 0;border:1.5px solid var(--ink);border-radius:14px;overflow:hidden;background:var(--card);box-shadow:var(--shadow)}
+.seq-step{flex:1;padding:16px 20px 15px;position:relative}
+.seq-step + .seq-step{border-left:1.5px dashed var(--rule)}
+.seq-ord{font-family:var(--serif);font-style:italic;font-size:13px;color:var(--purple-deep)}
+.seq-name{font-weight:700;font-size:16px;margin:2px 0 3px}
+.seq-note{font-size:13px;color:var(--ink-soft);line-height:1.45}
+.seq-step.now{background:linear-gradient(180deg,var(--purple-tint),transparent 130%)}
+.seq-step.now::after{content:"START HERE";position:absolute;top:10px;right:12px;font-family:var(--mono);font-size:9.5px;letter-spacing:.12em;color:var(--purple-deep);border:1px solid var(--purple);padding:2.5px 7px;border-radius:99px;background:var(--card)}
+
+/* placeholder legend */
+.legend{display:flex;align-items:center;gap:10px;margin-top:22px;font-size:13.5px;color:var(--ink-soft)}
+.ph{font-family:var(--mono);font-size:.86em;background:var(--flag-tint);color:var(--flag);border:1px solid #f0c4a8;border-radius:6px;padding:1px 6px;white-space:nowrap}
+
+/* ───────── sections ───────── */
+section{margin-top:84px}
+.sec-head{display:flex;align-items:baseline;gap:18px;margin-bottom:8px}
+.sec-num{font-family:var(--serif);font-style:italic;font-weight:340;font-size:20px;color:var(--flag)}
+h2{font-family:var(--serif);font-weight:480;font-size:clamp(28px,3.6vw,40px);letter-spacing:-.01em}
+.sec-sub{color:var(--ink-soft);max-width:660px;margin-bottom:28px;font-size:15.5px}
+
+/* receipts */
+.receipts{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:16px}
+.rcpt{background:var(--card);border:1px solid var(--rule);border-radius:14px;padding:20px 22px 18px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:10px}
+.rcpt-src{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--purple-deep)}
+.rcpt q{font-family:var(--serif);font-weight:420;font-size:16.5px;line-height:1.42;quotes:"“" "”"}
+.rcpt .why{font-size:13px;color:var(--ink-soft);border-top:1px dashed var(--rule);padding-top:9px;margin-top:auto}
+.rcpt.hot{border:1.5px solid var(--purple)}
+.rcpt.hot .rcpt-src::after{content:" · primed buyer";color:var(--flag)}
+
+/* definition — rate card */
+.defgrid{display:grid;grid-template-columns:1fr 1.35fr;gap:18px;align-items:stretch}
+.defcard{border-radius:16px;padding:26px 28px;position:relative}
+.def-free{background:var(--card);border:1.5px solid var(--rule);box-shadow:var(--shadow)}
+.def-paid{background:var(--ink);color:var(--paper);box-shadow:0 18px 44px rgba(35,25,10,.28)}
+.def-tag{font-family:var(--mono);font-size:10.5px;letter-spacing:.15em;text-transform:uppercase;display:inline-block;padding:4px 10px;border-radius:99px;margin-bottom:14px}
+.def-free .def-tag{background:var(--green-tint);color:var(--green)}
+.def-paid .def-tag{background:var(--purple);color:#fff}
+.def-title{font-family:var(--serif);font-size:24px;font-weight:480;margin-bottom:4px}
+.def-price{font-family:var(--serif);font-style:italic;font-size:15px;opacity:.75;margin-bottom:14px}
+.defcard ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+.defcard li{padding-left:24px;position:relative;font-size:15px;line-height:1.5}
+.def-free li::before{content:"✓";position:absolute;left:0;color:var(--green);font-weight:700}
+.def-paid li::before{content:"✦";position:absolute;left:0;color:#b7a6ff}
+.def-paid li strong{color:#d8cdff;font-weight:600}
+.def-foot{margin-top:18px;padding-top:14px;border-top:1px dashed rgba(255,255,255,.25);font-size:13.5px;opacity:.85;line-height:1.5}
+.def-notes{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.mini-note{background:var(--paper-deep);border:1px solid var(--rule);border-radius:12px;padding:15px 18px;font-size:13.5px;color:var(--ink-soft);line-height:1.5}
+.mini-note b{color:var(--ink)}
+
+/* ───────── email cards ───────── */
+.tabs{display:flex;gap:8px;margin-bottom:20px;flex-wrap:wrap}
+.tab{font-family:var(--sans);font-weight:600;font-size:14px;padding:9px 18px;border-radius:99px;border:1.5px solid var(--ink);background:transparent;color:var(--ink);cursor:pointer;transition:all .18s}
+.tab small{display:block;font-weight:400;font-size:11px;color:var(--ink-soft)}
+.tab:hover{background:var(--paper-deep)}
+.tab.on{background:var(--ink);color:var(--paper)}
+.tab.on small{color:#cfc6b5}
+.email{display:none;background:var(--card);border:1px solid var(--rule);border-radius:16px;box-shadow:var(--shadow);overflow:hidden;animation:rise .35s ease}
+.email.on{display:block}
+@keyframes rise{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.email-head{background:var(--paper-deep);border-bottom:1px solid var(--rule);padding:16px 26px;display:flex;justify-content:space-between;gap:14px;align-items:flex-start}
+.email-meta{font-size:13px;color:var(--ink-soft);display:flex;flex-direction:column;gap:2px}
+.email-meta b{color:var(--ink);font-weight:600}
+.email-subj{font-weight:700;font-size:15.5px;color:var(--ink);margin-top:5px}
+.email-body{padding:26px 30px 30px;font-size:15.5px;line-height:1.62;max-width:720px}
+.email-body p{margin-bottom:14px}
+.email-body ul{margin:0 0 14px 4px;list-style:none;display:flex;flex-direction:column;gap:7px}
+.email-body li{padding-left:22px;position:relative}
+.email-body li::before{content:"—";position:absolute;left:0;color:var(--purple)}
+.email-body .blockhead{font-weight:700}
+.email-body a{color:var(--purple-deep);font-weight:600;text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:2.5px}
+.timing{font-family:var(--serif);font-style:italic;font-size:13.5px;color:var(--flag);margin-bottom:14px}
+
+/* copy button */
+.copybtn{font-family:var(--mono);font-size:11px;letter-spacing:.08em;border:1.5px solid var(--ink);background:var(--card);color:var(--ink);border-radius:8px;padding:7px 12px;cursor:pointer;white-space:nowrap;transition:all .15s;flex-shrink:0}
+.copybtn:hover{background:var(--ink);color:var(--paper)}
+.copybtn.done{background:var(--green);border-color:var(--green);color:#fff}
+
+/* ───────── phone / SMS ───────── */
+.smswrap{display:grid;grid-template-columns:minmax(320px,420px) 1fr;gap:40px;align-items:start}
+.phone{background:#0e0d0b;border-radius:42px;padding:12px;box-shadow:0 24px 60px rgba(35,25,10,.3)}
+.screen{background:#fff;border-radius:32px;overflow:hidden}
+.ph-status{background:#f6f4f0;padding:14px 16px 10px;text-align:center;border-bottom:1px solid #e8e4dc}
+.ph-name{font-weight:700;font-size:13.5px}
+.ph-num{font-size:11px;color:#8a8578}
+.thread{padding:16px 14px 22px;display:flex;flex-direction:column;gap:7px}
+.stage{align-self:center;font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faint);margin:12px 0 5px;display:flex;align-items:center;gap:8px}
+.stage::before,.stage::after{content:"";width:22px;height:1px;background:var(--rule)}
+.bub{max-width:82%;padding:10px 14px;border-radius:19px;font-size:13.8px;line-height:1.45}
+.bub.out{align-self:flex-end;background:var(--blue-bubble);color:#fff;border-bottom-right-radius:5px}
+.bub.out .ph{background:rgba(255,255,255,.22);color:#fff;border-color:rgba(255,255,255,.4)}
+.bub.in{align-self:flex-start;background:#e9e6df;color:var(--ink);border-bottom-left-radius:5px}
+.bub b{font-weight:700}
+.sms-notes{display:flex;flex-direction:column;gap:14px;position:sticky;top:24px}
+.sms-note{background:var(--card);border:1px solid var(--rule);border-left:4px solid var(--purple);border-radius:0 12px 12px 0;padding:14px 18px;font-size:14px;color:var(--ink-soft)}
+.sms-note b{color:var(--ink)}
+.sms-note.alert{border-left-color:var(--flag)}
+.copyrow{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px}
+
+/* ───────── license / close loop ───────── */
+.license{background:var(--card);border:1.5px solid var(--ink);border-radius:16px;box-shadow:var(--shadow);padding:30px 34px;position:relative;max-width:780px}
+.license::before{content:"✅";position:absolute;top:-16px;left:30px;font-size:22px;background:var(--card);padding:0 8px}
+.license h3{font-family:var(--serif);font-weight:520;font-size:20px;margin-bottom:14px}
+.license p{font-size:15px;margin-bottom:12px;line-height:1.6}
+.license .lst{margin:0 0 14px 2px;list-style:none}
+.license .lst li{padding-left:20px;position:relative;font-size:15px;margin-bottom:6px}
+.license .lst li::before{content:"·";position:absolute;left:4px;font-weight:900;color:var(--purple)}
+.plain{background:var(--purple-tint);border-radius:10px;padding:14px 18px;font-size:14.5px;line-height:1.6}
+.plain b{color:var(--purple-deep)}
+
+/* ───────── decisions ───────── */
+.decs{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
+.dec{background:var(--card);border:1px solid var(--rule);border-radius:14px;padding:22px 24px;box-shadow:var(--shadow);position:relative}
+.dec-num{font-family:var(--serif);font-style:italic;font-weight:340;font-size:38px;color:var(--rule);position:absolute;top:12px;right:20px;line-height:1}
+.dec h3{font-size:16.5px;font-weight:700;margin-bottom:8px;padding-right:40px}
+.dec p{font-size:14px;color:var(--ink-soft);line-height:1.55;margin-bottom:10px}
+.rec{display:inline-block;font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;background:var(--purple);color:#fff;padding:4px 10px;border-radius:99px;margin-bottom:8px}
+.dec .pick{font-size:14.5px;color:var(--ink);font-weight:600}
+
+footer{margin-top:100px;padding-top:24px;border-top:2px solid var(--ink);display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;color:var(--ink-soft)}
+
+@media (max-width:860px){
+  .defgrid,.def-notes,.smswrap{grid-template-columns:1fr}
+  .sms-notes{position:static}
+  .seq{flex-direction:column}
+  .seq-step + .seq-step{border-left:none;border-top:1.5px dashed var(--rule)}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="kicker"><span class="dot"></span>proof for review · v1 · aug 5 2026<span class="dot"></span>send fri aug 7 / mon aug 10</div>
+  <h1>UGC Rights — <em>the language</em></h1>
+  <p class="dek">Everything we say to <strong>brands</strong> and to <strong>creators</strong> for the first manual rights deals. Grounded in Tony's framing, the contract precedents, and the plan agreed with Katie.</p>
+
+  <div class="seq">
+    <div class="seq-step now">
+      <div class="seq-ord">first</div>
+      <div class="seq-name">MD Solar Sciences</div>
+      <div class="seq-note">Chiara — back in office next week. She's the one who said ad rights is why she keeps Social Cat.</div>
+    </div>
+    <div class="seq-step">
+      <div class="seq-ord">then</div>
+      <div class="seq-name">Celeste Naturals</div>
+      <div class="seq-note">Already asked about buying rights to the first piece. Katie wants a few more posts live before we go back to her.</div>
+    </div>
+    <div class="seq-step">
+      <div class="seq-ord">later</div>
+      <div class="seq-name">28 Litsea (Christine)</div>
+      <div class="seq-note">Hold until after her 3rd campaign, per Katie.</div>
+    </div>
+  </div>
+
+  <div class="legend"><span class="ph">$[75]</span><span>Anything highlighted like this is a placeholder — needs a real value before anything is sent.</span></div>
+</header>
+
+<!-- ══════════ 01 receipts ══════════ -->
+<section id="receipts">
+  <div class="sec-head"><span class="sec-num">01 —</span><h2>The receipts</h2></div>
+  <p class="sec-sub">Why the language reads the way it does. Every choice below traces back to one of these.</p>
+  <div class="receipts">
+    <div class="rcpt hot">
+      <div class="rcpt-src">Chiara · MD call · Jul 15</div>
+      <q>The only reason she still keeps Social Cat is ad usage rights on content… she'd consider dropping Social Cat and moving to a more expensive Benable plan.</q>
+      <div class="why">→ The MD email opens with this. She asked for exactly what we're selling.</div>
+    </div>
+    <div class="rcpt">
+      <div class="rcpt-src">Tony · Aug 3 standup</div>
+      <q>Right now you can use it natively on social organically for thirty days. But if you wanna get the raw files and keep them in perpetuity and run ads against them or always display them on your website… just let us know if you wanna acquire those rights.</q>
+      <div class="why">→ The free-vs-paid definition, verbatim from Tony. Emails also tease the portal feature.</div>
+    </div>
+    <div class="rcpt">
+      <div class="rcpt-src">Tony · PCA + Just Juice contracts · Jun 23</div>
+      <q>We will only bill them for the creator fees that we paid out to secure those rights, with no extra charges on our end.</q>
+      <div class="why">→ Pass-through pricing is already Benable's stated posture. It's also a great sales line.</div>
+    </div>
+    <div class="rcpt">
+      <div class="rcpt-src">Tony · Urthy Scents pitch · May 27</div>
+      <q>We help negotiate a price that works for you and the creator at no extra charge… generally around $50. Only buy stuff that you are exceptionally happy with.</q>
+      <div class="why">→ The only prior brand-facing draft. The "$50-ish" anchor + the "only buy what you love" angle both carried over.</div>
+    </div>
+    <div class="rcpt">
+      <div class="rcpt-src">Marina Larina · creator</div>
+      <q>30 days free is fine, wants payment for longer periods, prefers Benable negotiate on her behalf.</q>
+      <div class="why">→ Creators expect to be paid for this, and they want us to run the deal. The SMS does both.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ 02 definition ══════════ -->
+<section id="definition">
+  <div class="sec-head"><span class="sec-num">02 —</span><h2>What brands are getting, exactly</h2></div>
+  <p class="sec-sub">The core definition. This block is reused everywhere — emails, the license recap, and eventually the portal.</p>
+  <div class="defgrid">
+    <div class="defcard def-free">
+      <span class="def-tag">Already included · free</span>
+      <div class="def-title">Every campaign</div>
+      <div class="def-price">no extra cost, already theirs</div>
+      <ul>
+        <li>Reshare any campaign post on the brand's own social channels</li>
+        <li>Use it organically — website, emails, blog — for <b>30 days</b> after it goes live</li>
+      </ul>
+    </div>
+    <div class="defcard def-paid">
+      <span class="def-tag">Buying the rights</span>
+      <div class="def-title">Per post, one-time</div>
+      <div class="def-price"><span class="ph">$[75]</span> — paid to the creator, nothing added on top</div>
+      <ul>
+        <li>The <strong>raw, unwatermarked video file</strong> (plus the posted version)</li>
+        <li><strong>Perpetual, worldwide license</strong> for the brand's owned channels: website &amp; product pages, email, organic social — no expiration</li>
+        <li><strong>Paid ads for 12 months</strong> from purchase — renewable after that (we re-up with the creator)</li>
+        <li><strong>Light edits allowed</strong> — trim, crop, captions, logo overlay, re-cuts for ad formats</li>
+        <li>The creator's <strong>original post stays live</strong> — the organic social proof keeps working</li>
+        <li><strong>Benable handles everything</strong> — we take each post to its creator for sign-off, then handle the license, payment, and file delivery. Only creator-confirmed posts are billed</li>
+      </ul>
+      <div class="def-foot"><b>Not included</b> (say only if asked): exclusivity — the creator can keep working with other brands — and resale or transfer of the content to third parties. The license is for the brand's own channels.</div>
+    </div>
+    <div class="def-notes">
+      <div class="mini-note"><b>If they ask about boosting from the creator's handle</b> — TikTok Spark Ads / IG partnership ads need a creator authorization code. Answer: "we can arrange that too."</div>
+      <div class="mini-note" style="grid-column:1/-1;border-left:4px solid var(--purple)"><b>Why ads cap at 12 months — note for Katie &amp; Tony.</b> Still one price, one yes: the ads term is the only clock, and raw files + owned channels stay perpetual (nobody renegotiates a product page). Twelve months clears every known benchmark — Chiara's ask was "at least 90 days" (this is 4×), Statusphere's published ads license is 1 year, and it's the industry's default clock (IZEA's offer builder defaults to 12 months; Aspire's picker is 3/6/12; TRIBE's is 12-or-perpetual). It kills the creator-risk case ("my face in ads forever for $75") exactly where market pricing runs per-30-days. And when productized, the 12-month renewal becomes the paid-extension moment (Amazon's model: capped license + preset extension rate) — while in the manual phase a 1-year clock means zero renewal admin and no expiry landing right before BFCM.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ 03 brand emails ══════════ -->
+<section id="emails">
+  <div class="sec-head"><span class="sec-num">03 —</span><h2>The brand emails</h2></div>
+  <p class="sec-sub">Three versions, same core block. MD is the one going out first.</p>
+
+  <div class="tabs">
+    <button class="tab on" data-email="a">A · MD Solar Sciences<small>Chiara — proactive, send when she's back</small></button>
+    <button class="tab" data-email="b">B · Celeste Naturals<small>warm — she already asked</small></button>
+    <button class="tab" data-email="c">C · Generic<small>any brand, future use</small></button>
+  </div>
+
+  <!-- Email A -->
+  <div class="email on" id="email-a">
+    <div class="email-head">
+      <div class="email-meta">
+        <span><b>From</b> Julia · julia@benable.com</span>
+        <span><b>To</b> Chiara · MD Solar Sciences</span>
+        <span class="email-subj">Own your campaign content — raw files + ad rights</span>
+      </div>
+      <button class="copybtn" data-copy="emailA">copy email</button>
+    </div>
+    <div class="email-body">
+      <p class="timing">Send early next week, when Chiara is back in office.</p>
+      <p>Hi Chiara,</p>
+      <p>Welcome back! Hope you had a great week off.</p>
+      <p>When we last talked, you mentioned ad usage rights on content being the one thing you still lean on Social Cat for — so I wanted to flag this before it's even in the product. We're adding the ability to buy usage rights to any of your campaign content directly in the portal. Before that ships, we're doing it hands-on with a few brands, and I'd love for MD to be first.</p>
+      <p>Here's how it works:</p>
+      <p><span class="blockhead">Already included in your campaign:</span> you can reshare any post on MD's own channels, and use it organically (site, email) for 30 days after it goes live.</p>
+      <p><span class="blockhead">Buying the rights to a post — <span class="ph">$[75]</span> one-time — gets you:</span></p>
+      <ul>
+        <li>The raw, unwatermarked video file (plus the posted version)</li>
+        <li>Use it forever on your owned channels: your website, email, organic social — no expiration</li>
+        <li>Run it as paid ads for up to 12 months (renewable — just ask)</li>
+        <li>Light edits are fine (trim, captions, logo, re-cuts for ad formats)</li>
+        <li>The creator's original post stays live, so the organic reach keeps working</li>
+      </ul>
+      <p>The <span class="ph">$[75]</span> goes to the creator — we don't add anything on top, and we handle the creator outreach, the license, payment, and file delivery.</p>
+      <p>The nice part of buying after the fact: you only pay for content you already know you love, and you've already seen how it performs.</p>
+      <p>All your campaign content is here: <a><span class="ph">[dashboard link]</span></a>. Just reply with the posts you'd like — we'll handle the negotiation with each creator and do our best to secure the rights for you. You're only ever billed for the ones we secure, and we'll get you the files as soon as they're confirmed.</p>
+      <p>Julia</p>
+    </div>
+  </div>
+
+  <!-- Email B -->
+  <div class="email" id="email-b">
+    <div class="email-head">
+      <div class="email-meta">
+        <span><b>From</b> Julia · julia@benable.com</span>
+        <span><b>To</b> <span class="ph">[Chrissy]</span> · Celeste Naturals</span>
+        <span class="email-subj">The content you loved — here's how to make it yours</span>
+      </div>
+      <button class="copybtn" data-copy="emailB">copy email</button>
+    </div>
+    <div class="email-body">
+      <p class="timing">Hold until a few more posts are live, per Katie.</p>
+      <p>Hi <span class="ph">[Chrissy]</span>,</p>
+      <p>Katie mentioned you loved <span class="ph">[creator]</span>'s video — great eye, it's one of our favorites too. A few more posts from your campaign are live now as well: <a><span class="ph">[dashboard link]</span></a>.</p>
+      <p>Since you asked about the rights, here's exactly how that works:</p>
+      <p><span class="blockhead">Already included in your campaign:</span> you can reshare any post on Celeste's own channels, and use it organically (site, email) for 30 days after it goes live.</p>
+      <p><span class="blockhead">Buying the rights to a post — <span class="ph">$[75]</span> one-time — gets you:</span></p>
+      <ul>
+        <li>The raw, unwatermarked video file (plus the posted version)</li>
+        <li>Use it forever on your owned channels: your website, email, organic social — no expiration</li>
+        <li>Run it as paid ads for up to 12 months (renewable — just ask)</li>
+        <li>Light edits are fine (trim, captions, logo, re-cuts for ad formats)</li>
+        <li>The creator's original post stays live, so the organic reach keeps working</li>
+      </ul>
+      <p>The <span class="ph">$[75]</span> goes to the creator — we don't add anything on top, and we handle the creator outreach, the license, payment, and file delivery.</p>
+      <p>If there are any posts you'd like — <span class="ph">[creator]</span>'s video or others — just reply with which ones. We'll take each one to its creator for a quick sign-off (the content is theirs to sell — most happily say yes, though occasionally someone passes). You're only billed for the ones that confirm, and files land within a few days.</p>
+      <p>Julia</p>
+    </div>
+  </div>
+
+  <!-- Email C -->
+  <div class="email" id="email-c">
+    <div class="email-head">
+      <div class="email-meta">
+        <span><b>From</b> Julia · julia@benable.com</span>
+        <span><b>To</b> <span class="ph">[Name]</span> · <span class="ph">[Brand]</span></span>
+        <span class="email-subj">Want to keep any of your campaign content?</span>
+      </div>
+      <button class="copybtn" data-copy="emailC">copy email</button>
+    </div>
+    <div class="email-body">
+      <p class="timing">Reusable for any brand with live campaign content.</p>
+      <p>Hi <span class="ph">[Name]</span>,</p>
+      <p>Your campaign content has been rolling in — all of it's here: <a><span class="ph">[dashboard link]</span></a>.</p>
+      <p>A heads-up on something we're adding to the portal soon: the ability to buy the usage rights to any of your campaign posts. Before that ships, we're offering it directly.</p>
+      <p><span class="blockhead">Already included in your campaign:</span> you can reshare any post on your own channels, and use it organically (site, email) for 30 days after it goes live.</p>
+      <p><span class="blockhead">Buying the rights to a post — <span class="ph">$[75]</span> one-time — gets you:</span></p>
+      <ul>
+        <li>The raw, unwatermarked video file (plus the posted version)</li>
+        <li>Use it forever on your owned channels: your website, email, organic social — no expiration</li>
+        <li>Run it as paid ads for up to 12 months (renewable — just ask)</li>
+        <li>Light edits are fine (trim, captions, logo, re-cuts for ad formats)</li>
+        <li>The creator's original post stays live, so the organic reach keeps working</li>
+      </ul>
+      <p>The <span class="ph">$[75]</span> goes to the creator — we don't add anything on top, and we handle the creator outreach, the license, payment, and file delivery.</p>
+      <p>If any posts caught your eye, reply with which ones. We'll take each one to its creator for a quick sign-off — the content is theirs to sell, and most happily say yes. You're only billed for posts that confirm, and files land within a few days.</p>
+      <p>Julia</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ 04 creator sms ══════════ -->
+<section id="sms">
+  <div class="sec-head"><span class="sec-num">04 —</span><h2>The creator texts</h2></div>
+  <p class="sec-sub">From whoever normally texts creators — Katie's number keeps it consistent. Text 2 is the important one: the reply-YES thread <em>is</em> the lightweight license for the manual phase.</p>
+
+  <div class="smswrap">
+    <div class="phone"><div class="screen">
+      <div class="ph-status"><div class="ph-name">Katie · Benable</div><div class="ph-num">to: [creator]</div></div>
+      <div class="thread">
+
+        <div class="stage">text 1 · the ask</div>
+        <div class="bub out">Hi <span class="ph">[Name]</span>, it's Katie from Benable! Great news — <span class="ph">[Brand]</span> loved your <span class="ph">[product]</span> video so much they want to buy the rights to keep using it in their marketing (their ads, website, emails). You'd get <b><span class="ph">$[75]</span></b> via Venmo/PayPal, your post stays up on your page, and all we'd need from you is the original video file. Interested? 😊</div>
+        <div class="bub in">omg yes!! 🥹</div>
+
+        <div class="stage">text 2 · the yes = the license</div>
+        <div class="bub out">Amazing! Quick official bit — by replying YES you're confirming <span class="ph">[Brand]</span> can use your <span class="ph">[product]</span> video in their own marketing — their social, website, and emails ongoing, plus paid ads for the first 12 months — worldwide, with light edits allowed. Your post stays live on your page and you can keep it in your portfolio. You'll get <span class="ph">$[75]</span> as soon as we have the original file. Reply YES to lock it in 🎉</div>
+        <div class="bub in">YES 🎉</div>
+
+        <div class="stage">text 3 · logistics</div>
+        <div class="bub out">Perfect, you're all set! Two things: 1) send the original video file (the version without the TikTok watermark) — email to julia@benable.com or a Google Drive/Dropbox link right here works. 2) What's your Venmo or PayPal? Payment goes out the same day we get the file 💸</div>
+
+        <div class="stage">text 4 · paid + door-opener</div>
+        <div class="bub out">Sent — <span class="ph">$[75]</span> via <span class="ph">[method]</span>! 🙌 Thank you <span class="ph">[Name]</span>, <span class="ph">[Brand]</span> is thrilled. Brands buying rights like this is a great sign they'll want more (paid) work with you down the line. And of course this doesn't change anything about your future Benable campaigns!</div>
+
+        <div class="stage">if they hesitate / decline</div>
+        <div class="bub out">Totally fine, no pressure — and it doesn't affect your Benable campaigns at all. If there's a price that would feel right to you, tell me a number and I'll take it to <span class="ph">[Brand]</span>. Either way, thank you!</div>
+
+        <div class="stage">if they ask "what does rights mean?"</div>
+        <div class="bub out">Great question! It means <span class="ph">[Brand]</span> can reuse that one video in their own marketing — like running it as an ad (for up to a year) or putting it on their site — instead of only resharing it for 30 days. You still own your account and your post, it stays up, and they can't resell it to anyone else. It's just for that one video, and you get paid for it.</div>
+
+      </div>
+    </div></div>
+
+    <div class="sms-notes">
+      <div class="sms-note"><b>Text 2 is the paper trail.</b> Keep the thread — the written YES plus the plain-English summary is the agreement for the manual phase. When this gets productized, it rolls into a proper e-sign flow.</div>
+      <div class="sms-note alert"><b>The raw file matters.</b> TikTok downloads carry a watermark — brands are paying for the clean original. Text 3 asks for it explicitly, and payment is framed as same-day-on-file to keep it moving.</div>
+      <div class="sms-note"><b>The decline reply is research.</b> "Tell me a number" turns every no into a pricing data point for the productized version — and Marina already told us creators want Benable negotiating for them.</div>
+      <div class="copyrow">
+        <button class="copybtn" data-copy="sms1">copy text 1</button>
+        <button class="copybtn" data-copy="sms2">copy text 2</button>
+        <button class="copybtn" data-copy="sms3">copy text 3</button>
+        <button class="copybtn" data-copy="sms4">copy text 4</button>
+        <button class="copybtn" data-copy="smsDecline">copy decline reply</button>
+        <button class="copybtn" data-copy="smsExplain">copy rights explainer</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ 05 close the loop ══════════ -->
+<section id="closeloop">
+  <div class="sec-head"><span class="sec-num">05 —</span><h2>Closing the loop with the brand</h2></div>
+  <p class="sec-sub">Sent once creators confirm — files attached, license recapped in plain English, billing stated. This is the brand's paper trail.</p>
+  <div class="license">
+    <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:14px">
+      <h3>Rights confirmed for <span class="ph">[n]</span> posts</h3>
+      <button class="copybtn" data-copy="closeLoop">copy message</button>
+    </div>
+    <ul class="lst">
+      <li><span class="ph">[@handle]</span> — <span class="ph">[product]</span> video — raw file attached</li>
+      <li><span class="ph">[@handle]</span> — <span class="ph">[product]</span> video — raw file attached</li>
+    </ul>
+    <div class="plain"><b>Your license, in plain English:</b> <span class="ph">[Brand]</span> has a one-time, worldwide license to this content: your owned channels (website, email, organic social) forever, plus paid ads for 12 months from today — light edits allowed. Not included: resale or transfer to third parties. The creators' original posts stay live.</div>
+    <p style="margin-top:14px">We'll add <span class="ph">$[75]</span> × <span class="ph">[n]</span> to your next invoice — that's the full amount going to the creators, nothing added on our end.</p>
+    <p style="margin-bottom:0;color:var(--ink-soft);font-size:14px"><em>If any creator declined:</em> <span class="ph">[@handle]</span> passed on this one — no charge for that post.</p>
+  </div>
+</section>
+
+<!-- ══════════ 06 decisions ══════════ -->
+<section id="decisions">
+  <div class="sec-head"><span class="sec-num">06 —</span><h2>Decisions before it goes out</h2></div>
+  <p class="sec-sub">Five calls to make — recommendations marked. Once these are set, every <span class="ph">orange chip</span> above gets its real value.</p>
+  <div class="decs">
+    <div class="dec"><span class="dec-num">1</span>
+      <h3>The rate</h3>
+      <p>Band agreed with Katie: $50–100. Tony's anchors: he's told brands "generally around $50," and the PCA note expected ~$40 average.</p>
+      <span class="rec">recommend</span>
+      <p class="pick">$75 flat per video ($50 photos). Creator-generous is right when yes-rate matters more than margin. Use $50 to match Tony's prior quote exactly.</p>
+    </div>
+    <div class="dec"><span class="dec-num">2</span>
+      <h3>Pass-through vs margin</h3>
+      <p>Tony's contract language already promises "no extra charges on our end."</p>
+      <span class="rec">recommend</span>
+      <p class="pick">100% pass-through for the manual phase — the learning is the product. Add margin when productized.</p>
+    </div>
+    <div class="dec"><span class="dec-num">3</span>
+      <h3>Perpetual vs time-boxed</h3>
+      <p>Aug 3 framing was perpetuity; market norms price ads per-30-days and 12 months is the industry default clock (IZEA, Aspire, TRIBE).</p>
+      <span class="rec" style="background:var(--green)">decided aug 6</span>
+      <p class="pick">One bundled price. Owned channels + raw files perpetual; paid ads capped at 12 months, renewable. See the note for Katie &amp; Tony above.</p>
+    </div>
+    <div class="dec"><span class="dec-num">4</span>
+      <h3>Creator payment rail</h3>
+      <p>Needed before Text 3 goes out. At $50–100/creator this sits well below tax-reporting thresholds — flag to accounting only once it scales.</p>
+      <span class="rec">decide</span>
+      <p class="pick">Venmo or PayPal — pick one (or offer both, as drafted).</p>
+    </div>
+    <div class="dec"><span class="dec-num">5</span>
+      <h3>Brand billing</h3>
+      <p>How the <span class="ph">$[75]</span> × n reaches the invoice.</p>
+      <span class="rec">recommend</span>
+      <p class="pick">Add to the next subscription invoice (as drafted). Alternative: one-off Stripe invoice per purchase.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span>benable · ugc rights · manual phase v1</span>
+  <span>sequencing per katie · framing per tony · language by julia + claude</span>
+</footer>
+
+</div>
+
+<script>
+/* tabs */
+document.querySelectorAll('.tab').forEach(t=>{
+  t.addEventListener('click',()=>{
+    document.querySelectorAll('.tab').forEach(x=>x.classList.remove('on'));
+    document.querySelectorAll('.email').forEach(x=>x.classList.remove('on'));
+    t.classList.add('on');
+    document.getElementById('email-'+t.dataset.email).classList.add('on');
+  });
+});
+
+/* copy-to-clipboard payloads (placeholders kept as-is on purpose) */
+const TXT={
+emailA:`Subject: Own your campaign content — raw files + ad rights
+
+Hi Chiara,
+
+Welcome back! Hope you had a great week off.
+
+When we last talked, you mentioned ad usage rights on content being the one thing you still lean on Social Cat for — so I wanted to flag this before it's even in the product. We're adding the ability to buy usage rights to any of your campaign content directly in the portal. Before that ships, we're doing it hands-on with a few brands, and I'd love for MD to be first.
+
+Here's how it works:
+
+Already included in your campaign: you can reshare any post on MD's own channels, and use it organically (site, email) for 30 days after it goes live.
+
+Buying the rights to a post — $[75] one-time — gets you:
+- The raw, unwatermarked video file (plus the posted version)
+- Use it forever on your owned channels: your website, email, organic social — no expiration
+- Run it as paid ads for up to 12 months (renewable — just ask)
+- Light edits are fine (trim, captions, logo, re-cuts for ad formats)
+- The creator's original post stays live, so the organic reach keeps working
+
+The $[75] goes to the creator — we don't add anything on top, and we handle the creator outreach, the license, payment, and file delivery.
+
+The nice part of buying after the fact: you only pay for content you already know you love, and you've already seen how it performs.
+
+All your campaign content is here: [dashboard link]. Just reply with the posts you'd like — we'll handle the negotiation with each creator and do our best to secure the rights for you. You're only ever billed for the ones we secure, and we'll get you the files as soon as they're confirmed.
+
+Julia`,
+emailB:`Subject: The content you loved — here's how to make it yours
+
+Hi [Chrissy],
+
+Katie mentioned you loved [creator]'s video — great eye, it's one of our favorites too. A few more posts from your campaign are live now as well: [dashboard link].
+
+Since you asked about the rights, here's exactly how that works:
+
+Already included in your campaign: you can reshare any post on Celeste's own channels, and use it organically (site, email) for 30 days after it goes live.
+
+Buying the rights to a post — $[75] one-time — gets you:
+- The raw, unwatermarked video file (plus the posted version)
+- Use it forever on your owned channels: your website, email, organic social — no expiration
+- Run it as paid ads for up to 12 months (renewable — just ask)
+- Light edits are fine (trim, captions, logo, re-cuts for ad formats)
+- The creator's original post stays live, so the organic reach keeps working
+
+The $[75] goes to the creator — we don't add anything on top, and we handle the creator outreach, the license, payment, and file delivery.
+
+If there are any posts you'd like — [creator]'s video or others — just reply with which ones. We'll take each one to its creator for a quick sign-off (the content is theirs to sell — most happily say yes, though occasionally someone passes). You're only billed for the ones that confirm, and files land within a few days.
+
+Julia`,
+emailC:`Subject: Want to keep any of your campaign content?
+
+Hi [Name],
+
+Your campaign content has been rolling in — all of it's here: [dashboard link].
+
+A heads-up on something we're adding to the portal soon: the ability to buy the usage rights to any of your campaign posts. Before that ships, we're offering it directly.
+
+Already included in your campaign: you can reshare any post on your own channels, and use it organically (site, email) for 30 days after it goes live.
+
+Buying the rights to a post — $[75] one-time — gets you:
+- The raw, unwatermarked video file (plus the posted version)
+- Use it forever on your owned channels: your website, email, organic social — no expiration
+- Run it as paid ads for up to 12 months (renewable — just ask)
+- Light edits are fine (trim, captions, logo, re-cuts for ad formats)
+- The creator's original post stays live, so the organic reach keeps working
+
+The $[75] goes to the creator — we don't add anything on top, and we handle the creator outreach, the license, payment, and file delivery.
+
+If any posts caught your eye, reply with which ones. We'll take each one to its creator for a quick sign-off — the content is theirs to sell, and most happily say yes. You're only billed for posts that confirm, and files land within a few days.
+
+Julia`,
+sms1:`Hi [Name], it's Katie from Benable! Great news — [Brand] loved your [product] video so much they want to buy the rights to keep using it in their marketing (their ads, website, emails). You'd get $[75] via Venmo/PayPal, your post stays up on your page, and all we'd need from you is the original video file. Interested? 😊`,
+sms2:`Amazing! Quick official bit — by replying YES you're confirming [Brand] can use your [product] video in their own marketing — their social, website, and emails ongoing, plus paid ads for the first 12 months — worldwide, with light edits allowed. Your post stays live on your page and you can keep it in your portfolio. You'll get $[75] as soon as we have the original file. Reply YES to lock it in 🎉`,
+sms3:`Perfect, you're all set! Two things: 1) send the original video file (the version without the TikTok watermark) — email to julia@benable.com or a Google Drive/Dropbox link right here works. 2) What's your Venmo or PayPal? Payment goes out the same day we get the file 💸`,
+sms4:`Sent — $[75] via [method]! 🙌 Thank you [Name], [Brand] is thrilled. Brands buying rights like this is a great sign they'll want more (paid) work with you down the line. And of course this doesn't change anything about your future Benable campaigns!`,
+smsDecline:`Totally fine, no pressure — and it doesn't affect your Benable campaigns at all. If there's a price that would feel right to you, tell me a number and I'll take it to [Brand]. Either way, thank you!`,
+smsExplain:`Great question! It means [Brand] can reuse that one video in their own marketing — like running it as an ad (for up to a year) or putting it on their site — instead of only resharing it for 30 days. You still own your account and your post, it stays up, and they can't resell it to anyone else. It's just for that one video, and you get paid for it.`,
+closeLoop:`Rights confirmed for [n] posts ✅
+
+- [@handle] — [product] video — raw file attached
+- [@handle] — [product] video — raw file attached
+
+Your license, in plain English: [Brand] has a one-time, worldwide license to this content: your owned channels (website, email, organic social) forever, plus paid ads for 12 months from today — light edits allowed. Not included: resale or transfer to third parties. The creators' original posts stay live.
+
+We'll add $[75] × [n] to your next invoice — that's the full amount going to the creators, nothing added on our end.
+
+[If any creator declined:] [@handle] passed on this one — no charge for that post.`
+};
+document.querySelectorAll('.copybtn').forEach(b=>{
+  b.addEventListener('click',async()=>{
+    try{
+      await navigator.clipboard.writeText(TXT[b.dataset.copy]);
+      const old=b.textContent;b.textContent='copied ✓';b.classList.add('done');
+      setTimeout(()=>{b.textContent=old;b.classList.remove('done')},1600);
+    }catch(e){
+      const ta=document.createElement('textarea');ta.value=TXT[b.dataset.copy];document.body.appendChild(ta);ta.select();document.execCommand('copy');ta.remove();
+      const old=b.textContent;b.textContent='copied ✓';b.classList.add('done');
+      setTimeout(()=>{b.textContent=old;b.classList.remove('done')},1600);
+    }
+  });
+});
+</script>
+</body>
+</html>
