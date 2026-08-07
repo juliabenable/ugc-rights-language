@@ -26,7 +26,7 @@
 - The **creator's original post stays live** on their page, so the organic social proof keeps working.
 - **Benable handles everything**: we take each post to its creator for sign-off, then handle the license, payment, and file delivery. No fees added on top, and only creator-confirmed posts are billed.
 
-**Not included** (say only if asked): exclusivity (the creator can keep working with other brands), and resale/transfer of the content to third parties — the license is for the brand's own channels.
+**Not included** (say only if asked): exclusivity (the creator can keep working with other brands), resale/transfer of the content to third parties, and edits that change how the creator looks or what they say — the license is for the brand's own channels.
 
 **Optional add-on to mention if asked:** boosting from the creator's own handle (TikTok Spark Ads / IG partnership ads) needs a creator authorization code — we can arrange that too.
 
@@ -114,7 +114,7 @@
 
 **Text 2 — the confirmation (this is the lightweight license — keep the thread!)**
 
-> Amazing! Quick official bit — by replying YES you're confirming [Brand] can use your [product] video in their own marketing — their social, website, and emails ongoing, plus paid ads for the first 12 months — worldwide, with light edits allowed. Your post stays live on your page and you can keep it in your portfolio. You'll get $[75] as soon as we have the original file. Reply YES to lock it in 🎉
+> Amazing! Quick official bit — by replying YES you're confirming [Brand] can use your [product] video in their own marketing — their social, website, and emails ongoing, plus paid ads for the first 12 months — worldwide, with light edits allowed (trims, captions — never changes to how you look or what you say). Your post stays live on your page and you can keep it in your portfolio. You'll get $[75] as soon as we have the original file. Reply YES to lock it in 🎉
 
 **Text 3 — logistics (after YES)**
 
@@ -143,7 +143,7 @@
 > - [@handle] — [product] video — raw file attached
 > - [@handle] — [product] video — raw file attached
 >
-> **Your license, in plain English:** [Brand] has a one-time, worldwide license to this content: your owned channels (website, email, organic social) forever, plus paid ads for 12 months from today — light edits allowed. Not included: resale or transfer to third parties. The creators' original posts stay live.
+> **Your license, in plain English:** [Brand] has a one-time, worldwide license to this content: your owned channels (website, email, organic social) forever, plus paid ads for 12 months from today — light edits allowed. Edits can't materially change how a creator looks or what they say, and you're responsible for how you use the content. Not included: resale or transfer to third parties. The creators' original posts stay live.
 >
 > We'll add $[75] × [n] to your next invoice — that's the full amount going to the creators, nothing added on our end.
 >
