@@ -114,7 +114,7 @@
 
 **Text 2 — the confirmation (this is the lightweight license — keep the thread!)**
 
-> Amazing! Quick official bit — by replying YES you're confirming [Brand] can use your [product] video in their own marketing — their social, website, and emails ongoing, plus paid ads for the first 12 months — worldwide, with light edits allowed (trims, captions — never changes to how you look or what you say). Your post stays live on your page and you can keep it in your portfolio. You'll get $[75] as soon as we have the original file. Reply YES to lock it in 🎉
+> Amazing! Quick official bit — by replying YES you're confirming [Brand] can use your [product] video — and you, your name and handle in it — in their own marketing — their social, website, and emails ongoing, plus paid ads for the first 12 months — worldwide, with light edits allowed (trims, captions — never changes to how you look or what you say). Your post stays live on your page and you can keep it in your portfolio. You'll get $[75] as soon as we have the original file. Reply YES to lock it in 🎉
 
 **Text 3 — logistics (after YES)**
 
