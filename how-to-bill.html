@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UGC Rights — How to Bill It · billing study</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Spline+Sans+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#faf6ef; --paper-deep:#f3ecdf; --ink:#1d1a15; --ink-soft:#5c554a; --ink-faint:#948b7d;
+  --rule:#e2d9c8; --card:#fffdf9; --purple:#7a5cfa; --purple-deep:#5b3fd4; --purple-tint:#efeaff;
+  --flag:#d94f1e; --flag-tint:#fdeade; --green:#2e7d4f; --green-tint:#e3f2e8; --amber:#a3690a; --amber-tint:#fdf3dc;
+  --shadow:0 2px 3px rgba(50,40,20,.05),0 14px 34px rgba(50,40,20,.09);
+  --serif:"Fraunces",Georgia,serif; --sans:"Instrument Sans","Helvetica Neue",sans-serif; --mono:"Spline Sans Mono",ui-monospace,monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.5;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0.45 0 0 0 0 0.4 0 0 0 0 0.3 0 0 0 0.05 0'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E")}
+.wrap{position:relative;z-index:1;max-width:1120px;margin:0 auto;padding:0 32px 120px}
+
+header{padding:70px 0 30px;border-bottom:2px solid var(--ink)}
+.crumbs{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;display:flex;gap:14px;flex-wrap:wrap;margin-bottom:22px}
+.crumbs a{color:var(--ink-soft);text-decoration:none;border-bottom:1px dashed var(--rule)}
+.crumbs a:hover{color:var(--purple-deep)}
+.crumbs .here{color:var(--flag)}
+.kicker{font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--flag);display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.kicker .dot{width:7px;height:7px;border-radius:50%;background:var(--flag)}
+h1{font-family:var(--serif);font-weight:390;font-size:clamp(42px,6.6vw,76px);line-height:1.02;letter-spacing:-.015em;margin:16px 0 12px}
+h1 em{font-style:italic;font-weight:340;color:var(--purple-deep)}
+.dek{font-size:18px;color:var(--ink-soft);max-width:720px}
+.dek strong{color:var(--ink)}
+.method{display:flex;gap:22px;flex-wrap:wrap;margin-top:22px;font-family:var(--mono);font-size:11.5px;color:var(--ink-faint);letter-spacing:.04em}
+.method b{color:var(--ink-soft)}
+
+section{margin-top:78px}
+.sec-head{display:flex;align-items:baseline;gap:18px;margin-bottom:8px}
+.sec-num{font-family:var(--serif);font-style:italic;font-weight:340;font-size:20px;color:var(--flag)}
+h2{font-family:var(--serif);font-weight:480;font-size:clamp(27px,3.4vw,38px);letter-spacing:-.01em}
+.sec-sub{color:var(--ink-soft);max-width:720px;margin-bottom:26px;font-size:15.5px}
+.sec-sub b{color:var(--ink)}
+
+/* thesis */
+.thesis{background:var(--ink);color:var(--paper);border-radius:18px;padding:36px 40px;margin-top:36px;box-shadow:0 18px 44px rgba(35,25,10,.28)}
+.thesis .t-label{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#b7a6ff;margin-bottom:14px}
+.thesis p{font-family:var(--serif);font-weight:380;font-size:clamp(19px,2.4vw,25px);line-height:1.45}
+.thesis p b{color:#d8cdff;font-weight:600}
+.thesis .t-sub{font-family:var(--sans);font-size:14.5px;color:#cfc6b5;margin-top:16px;line-height:1.6;max-width:780px}
+.thesis .t-sub b{color:#e6e0d3}
+
+/* the invoice */
+.inv-grid{display:grid;grid-template-columns:minmax(0,560px) 1fr;gap:28px;align-items:start}
+.invoice{background:var(--card);border:1.5px solid var(--ink);border-radius:4px 4px 14px 14px;box-shadow:var(--shadow);position:relative;overflow:hidden}
+.invoice::before{content:"";display:block;height:7px;background:repeating-linear-gradient(90deg,var(--ink) 0 14px,transparent 14px 20px)}
+.inv-pad{padding:26px 30px 30px}
+.inv-top{display:flex;justify-content:space-between;align-items:flex-start;gap:14px;margin-bottom:4px}
+.inv-brand{font-family:var(--serif);font-weight:600;font-size:21px;letter-spacing:-.01em}
+.inv-brand small{display:block;font-family:var(--mono);font-weight:400;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faint);margin-top:3px}
+.inv-meta{font-family:var(--mono);font-size:10.5px;color:var(--ink-soft);text-align:right;line-height:1.7}
+.inv-to{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;color:var(--ink-soft);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:9px 0;margin:14px 0 4px}
+table.inv-lines{width:100%;border-collapse:collapse;font-size:14px}
+.inv-lines td{padding:13px 0;border-bottom:1px solid var(--rule);vertical-align:top}
+.inv-lines tr:last-child td{border-bottom:none}
+.inv-lines .li-name{font-weight:600}
+.inv-lines .li-name small{display:block;font-weight:400;font-size:12px;color:var(--ink-soft);margin-top:2px}
+.inv-lines .li-amt{text-align:right;font-family:var(--mono);font-size:13.5px;white-space:nowrap;padding-left:14px}
+.li-badge{display:inline-block;font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;border-radius:99px;padding:2px 8px;margin-left:8px;vertical-align:1px}
+.li-badge.tax{background:var(--amber-tint);color:var(--amber)}
+.li-badge.pass{background:var(--green-tint);color:var(--green)}
+.inv-total{display:flex;justify-content:space-between;border-top:2px solid var(--ink);margin-top:2px;padding-top:13px;font-weight:700;font-size:15px}
+.inv-total span:last-child{font-family:var(--mono)}
+.inv-foot{margin-top:14px;font-family:var(--mono);font-size:10px;color:var(--ink-faint);line-height:1.7}
+.stamp{position:absolute;right:22px;bottom:78px;transform:rotate(-9deg);border:2.5px solid var(--green);color:var(--green);border-radius:8px;padding:7px 13px;font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;opacity:.82;background:rgba(227,242,232,.55);pointer-events:none}
+.inv-notes{display:flex;flex-direction:column;gap:12px}
+.inv-note{background:var(--card);border:1px solid var(--rule);border-radius:12px;padding:14px 17px;box-shadow:var(--shadow);font-size:13.5px;color:var(--ink-soft);line-height:1.55}
+.inv-note b{color:var(--ink)}
+.inv-note .n-num{font-family:var(--serif);font-style:italic;color:var(--flag);font-size:15px;margin-right:7px}
+
+/* decisions */
+.decs{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px}
+.dec{background:var(--card);border:1px solid var(--rule);border-radius:14px;padding:20px 22px;box-shadow:var(--shadow)}
+.dec .d-num{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--purple-deep);margin-bottom:8px}
+.dec h3{font-family:var(--serif);font-size:19px;font-weight:520;margin-bottom:8px;line-height:1.25}
+.dec p{font-size:13.5px;color:var(--ink-soft);line-height:1.55}
+.dec p b{color:var(--ink)}
+.dec .why{border-top:1px dashed var(--rule);margin-top:11px;padding-top:10px;font-size:12.5px;color:var(--ink-soft)}
+.dec .why b{color:var(--flag)}
+
+/* two flows */
+.flows{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:18px}
+.flow{border-radius:14px;padding:20px 22px;border:1px solid var(--rule);background:var(--card);box-shadow:var(--shadow)}
+.flow.hot{border:1.5px solid var(--purple)}
+.flow .f-tag{font-family:var(--mono);font-size:10px;letter-spacing:.15em;text-transform:uppercase;margin-bottom:4px;color:var(--ink-faint)}
+.flow.hot .f-tag{color:var(--purple-deep)}
+.flow h3{font-family:var(--serif);font-size:18.5px;font-weight:520;margin-bottom:12px}
+.flow ol{list-style:none;display:flex;flex-direction:column;gap:7px;font-size:13.5px;color:var(--ink-soft)}
+.flow li{padding-left:24px;position:relative;line-height:1.45}
+.flow li::before{content:attr(data-n);position:absolute;left:0;top:1px;font-family:var(--mono);font-size:10px;color:var(--flag);border:1px solid var(--rule);border-radius:99px;width:16px;height:16px;display:flex;align-items:center;justify-content:center;background:var(--paper-deep)}
+.flow li b{color:var(--ink)}
+
+/* matrix */
+.mx-scroll{overflow-x:auto;border:1.5px solid var(--ink);border-radius:14px;background:var(--card);box-shadow:var(--shadow)}
+table.mx{border-collapse:collapse;width:100%;min-width:1040px;font-size:13px}
+.mx th{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);text-align:left;padding:12px 14px;border-bottom:1.5px solid var(--ink);background:var(--paper-deep);position:sticky;top:0}
+.mx td{padding:11px 14px;border-bottom:1px solid var(--rule);vertical-align:top;line-height:1.45}
+.mx tr:last-child td{border-bottom:none}
+.mx .plat{font-weight:700;white-space:nowrap}
+.mx .plat small{display:block;font-family:var(--mono);font-weight:400;font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-faint);margin-top:2px}
+.mx .grp td{background:var(--purple-tint);font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--purple-deep);padding:7px 14px}
+.mx tr.twin td{background:var(--green-tint)}
+.pill{display:inline-block;font-family:var(--mono);font-size:10px;padding:2px 8px;border-radius:99px;white-space:nowrap}
+.pill.y{background:var(--green-tint);color:var(--green)}
+.pill.n{background:var(--flag-tint);color:var(--flag)}
+.pill.m{background:var(--amber-tint);color:var(--amber)}
+.mx .note{color:var(--ink-soft)}
+
+/* patterns */
+.pats{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}
+.pat{background:var(--card);border:1px solid var(--rule);border-radius:14px;padding:20px 22px;box-shadow:var(--shadow)}
+.pat .p-num{font-family:var(--serif);font-style:italic;font-weight:340;font-size:26px;color:var(--flag);line-height:1;margin-bottom:10px}
+.pat h3{font-family:var(--serif);font-size:19px;font-weight:520;margin-bottom:8px;line-height:1.3}
+.pat p{font-size:13.5px;color:var(--ink-soft);line-height:1.55}
+.pat p b{color:var(--ink)}
+.pat .steal{background:var(--purple-tint);border-radius:9px;padding:10px 14px;font-size:13px;line-height:1.5;margin-top:12px}
+.pat .steal b{color:var(--purple-deep)}
+
+/* watch-outs */
+.watch{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.w-card{background:var(--card);border:1px solid var(--rule);border-radius:14px;padding:20px 22px;box-shadow:var(--shadow)}
+.w-card.wide{grid-column:1 / -1}
+.w-card h3{font-family:var(--serif);font-size:19px;font-weight:520;margin-bottom:8px}
+.w-card p{font-size:13.5px;color:var(--ink-soft);line-height:1.6;margin-bottom:8px}
+.w-card p:last-child{margin-bottom:0}
+.w-card p b{color:var(--ink)}
+.w-card .cite{font-family:var(--mono);font-size:10.5px;color:var(--ink-faint)}
+.w-flag{background:var(--flag-tint);border-radius:9px;padding:10px 14px;font-size:13px;line-height:1.5;margin-top:10px}
+.w-flag b{color:var(--flag)}
+.disclaimer{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;color:var(--ink-faint);margin-top:14px;text-transform:uppercase}
+
+/* language flag */
+.lang-box{background:var(--card);border:1.5px solid var(--flag);border-radius:16px;padding:28px 32px;box-shadow:var(--shadow);max-width:880px}
+.lang-box h3{font-family:var(--serif);font-size:21px;font-weight:520;margin-bottom:12px}
+.lang-box p{font-size:15px;color:var(--ink-soft);margin-bottom:12px;line-height:1.6}
+.lang-box p b{color:var(--ink)}
+.lang-line{background:var(--green-tint);border-radius:10px;padding:13px 17px;font-size:14.5px;line-height:1.55}
+.lang-line b{color:var(--green)}
+
+/* receipts */
+.verif{border:1.5px solid var(--ink);border-radius:14px;overflow:hidden;background:var(--card);box-shadow:var(--shadow)}
+.vt-scroll{overflow-x:auto}
+table.vt{border-collapse:collapse;width:100%;min-width:760px;font-size:13px}
+.vt th{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);text-align:left;padding:11px 14px;border-bottom:1.5px solid var(--ink);background:var(--paper-deep)}
+.vt td{padding:11px 14px;border-bottom:1px solid var(--rule);vertical-align:top;line-height:1.45}
+.vt tr:last-child td{border-bottom:none}
+.vt .claim-c{font-weight:600;max-width:430px}
+.vt .ev{color:var(--ink-soft);font-size:12.5px;word-break:break-word}
+footer{margin-top:96px;padding-top:22px;border-top:2px solid var(--ink);display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;color:var(--ink-soft)}
+footer a{color:var(--purple-deep);text-decoration:none;border-bottom:1px dashed var(--rule)}
+
+@media (max-width:920px){.inv-grid,.flows,.watch{grid-template-columns:1fr}.stamp{right:14px;bottom:64px;font-size:10px}.w-card.wide{grid-column:auto}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <nav class="crumbs">
+    <a href="index.html">↳ the pack</a>
+    <a href="rights-language-v1.html">↳ outreach language</a>
+    <a href="what-others-do.html">↳ market study (what everyone else does)</a>
+    <span class="here">● how to bill it (this doc)</span>
+  </nav>
+  <div class="kicker"><span class="dot"></span>billing study · aug 10 2026<span class="dot"></span>12 platforms + the escrow baseline</div>
+  <h1>UGC Rights — <em>how to bill it</em></h1>
+  <p class="dek">A new brand's deal pays creators <strong>and</strong> adds $50–100/creator for rights to the videos, on top of the monthly subscription. This doc answers the open question from the Aug 7 call — <strong>how the money should actually flow</strong> — and maps how every comparable platform charges brands for creator money and rights money. Companion to the <strong>market study</strong>, which covers what rights cost; this one covers how they're billed.</p>
+  <div class="method"><span><b>2</b> research waves</span><span><b>~60</b> primary sources fetched</span><span><b>12</b> platforms' money-flow mapped</span><span><b>every</b> fee % sourced · unverified marked</span></div>
+</header>
+
+<div class="thesis">
+  <div class="t-label">The one-line answer</div>
+  <p>One monthly invoice, three separate lines: <b>subscription</b>, <b>creator payments</b>, <b>content rights</b> — the last two passed through at face value with <b>$0 added</b>, billed only for creators who confirmed and delivered. The industry hides its take inside bundled prices or stacks 8–30% on top; Benable's contracts already promise "no extra charges on our end," and a line-itemed invoice is what makes that promise <b>visible</b>.</p>
+  <div class="t-sub">Corollary: separate lines aren't just a sales flex — New York taxes the SaaS line and excludes advertising services, and a Jan 2026 NY ruling (<b>Beeline.com</b>) taxed an entire bundled SaaS-plus-services price because it wasn't separable. The invoice that proves the pass-through is the same invoice that survives a tax audit.</div>
+</div>
+
+<!-- ══════════ 01 the invoice ══════════ -->
+<section id="invoice">
+  <div class="sec-head"><span class="sec-num">01 —</span><h2>The invoice</h2></div>
+  <p class="sec-sub">What the brand should see each month. Example figures — rights at the decided <b>$75 flat</b> (contract band $50–100), six creators confirmed.</p>
+  <div class="inv-grid">
+    <div class="invoice">
+      <div class="inv-pad">
+        <div class="inv-top">
+          <div class="inv-brand">Benable<small>Happy Ventures PBC · Richmond VA</small></div>
+          <div class="inv-meta">invoice № 2026-08<br>aug 31, 2026 · net 15<br>via stripe</div>
+        </div>
+        <div class="inv-to">billed to: [brand] · campaign: [campaign name] · august</div>
+        <table class="inv-lines">
+          <tr>
+            <td class="li-name">Monthly subscription<span class="li-badge tax">taxable · saas</span><small>Platform, matching, campaign ops — Benable's fee</small></td>
+            <td class="li-amt">$1,199.00</td>
+          </tr>
+          <tr>
+            <td class="li-name">Creator payments — pass-through<span class="li-badge pass">$0 added</span><small>6 creators × $200, delivered &amp; approved in August</small></td>
+            <td class="li-amt">$1,200.00</td>
+          </tr>
+          <tr>
+            <td class="li-name">Content rights — pass-through<span class="li-badge pass">$0 added</span><small>6 creators × $75 · 12-month license + raw files · confirmed only</small></td>
+            <td class="li-amt">$450.00</td>
+          </tr>
+        </table>
+        <div class="inv-total"><span>Total</span><span>$2,849.00</span></div>
+        <div class="inv-foot">lines 2–3 are paid out to creators in full — benable adds nothing on top · separately stated for sales-tax purposes · creators who declined or didn't deliver: not billed</div>
+      </div>
+      <div class="stamp">pass-through · $0 added</div>
+    </div>
+    <div class="inv-notes">
+      <div class="inv-note"><span class="n-num">a.</span><b>Same invoice, never a second bill.</b> The subscription relationship already exists — rights and creator money ride the rail the brand already pays on. One bill was the whole promise of killing the 10-email thread.</div>
+      <div class="inv-note"><span class="n-num">b.</span><b>Separately stated, never bundled.</b> Three reasons stacked: the PCA / Just Juice contract language ("we will only bill them for the creator fees we paid out"), the NY bundling trap (<em>Beeline</em>, Jan 2026), and the sales line — "no markup" only lands if the brand can <em>see</em> it.</div>
+      <div class="inv-note"><span class="n-num">c.</span><b>Actuals, in arrears.</b> Only creators who confirmed + delivered appear. Benable pays each creator same-day on file delivery, recovers on the next monthly invoice. At $75 × a handful, the float is trivial — see decision № 2 for when that flips.</div>
+      <div class="inv-note"><span class="n-num">d.</span><b>Tax codes per line.</b> Stripe Tax computes per line item: SaaS line = taxable (NY: TB-ST-128); creator/rights lines map to advertising-type services NY excludes (20 NYCRR 527.3). Finance confirms the mapping — the structure makes it possible.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ 02 five decisions ══════════ -->
+<section id="decisions">
+  <div class="sec-head"><span class="sec-num">02 —</span><h2>The five decisions</h2></div>
+  <p class="sec-sub">Everything "how should we bill this" actually contains, decided.</p>
+  <div class="decs">
+    <div class="dec">
+      <div class="d-num">№ 1 · structure</div>
+      <h3>Line items on the monthly invoice</h3>
+      <p>Subscription + creator pass-through + rights pass-through, one Stripe invoice. Don't fold rights into the subscription price (kills comparability, muddies tax) and don't send a second bill (doubles the brand's AP work).</p>
+      <div class="why"><b>Why:</b> contract language already promises it; NY tax law rewards it; the invoice becomes the proof of "nothing added."</div>
+    </div>
+    <div class="dec">
+      <div class="d-num">№ 2 · timing</div>
+      <h3>Arrears now, book-ahead later</h3>
+      <p><b>Now:</b> bill actuals on the next monthly invoice — smallest ops, matches the drafted brand language. <b>Later:</b> when a campaign's creator budget gets real (or a brand has no payment history), collect the budget at campaign kickoff — that's the industry's escrow norm (#paid's deposit, Insense's wallet, JoinBrands' charge-on-accept).</p>
+      <div class="why"><b>Why:</b> arrears trades a tiny float for zero refund-handling — you never bill for a creator who declined.</div>
+    </div>
+    <div class="dec">
+      <div class="d-num">№ 3 · trigger</div>
+      <h3>Confirmed + delivered, only</h3>
+      <p>A rights fee is owed the moment the creator has said yes <b>and</b> the file is in hand — that's also the moment the creator gets paid. No charge for declines, no-shows, or posts the brand didn't buy.</p>
+      <div class="why"><b>Why:</b> "you're only ever billed for the ones we secure" is already in the brand emails — billing mechanics must keep the copy honest.</div>
+    </div>
+    <div class="dec">
+      <div class="d-num">№ 4 · consent</div>
+      <h3>Bundled deals move consent into the invite</h3>
+      <p>The manual test is post-hoc (brand picks posts after they're live, we ask creators). This deal bundles rights into the campaign — so disclosure belongs in the <b>campaign invite</b>: "this campaign includes [Brand] buying 12-month usage rights — an extra $75 on top of your payment." Accepting the campaign = accepting the rights sale. Fee still pays on delivery.</p>
+      <div class="why"><b>Why:</b> the rights-included model is how Insense / JoinBrands / minisocial brief; springing it post-hoc on a paid campaign invites declines the brand already paid to avoid.</div>
+    </div>
+    <div class="dec">
+      <div class="d-num">№ 5 · rail</div>
+      <h3>PayPal Payouts — covers Venmo too</h3>
+      <p>The open Venmo-vs-PayPal question has a one-rail answer: PayPal's Payouts product sends to PayPal <b>and</b> Venmo recipients (<span style="font-family:var(--mono);font-size:12px">recipient_wallet: VENMO</span>, US-only). Creator picks; one integration, one ledger. This is literally Aspire's setup.</p>
+      <div class="why"><b>Why:</b> PayPal is the default rail for this entire platform class (Aspire, GRIN, JoinBrands, Insense, Billo).</div>
+    </div>
+  </div>
+
+  <div class="flows">
+    <div class="flow">
+      <div class="f-tag">flow a · the manual test (live now)</div>
+      <h3>Post-hoc — brand picks after posts are live</h3>
+      <ol>
+        <li data-n="1">Campaign runs, posts go live</li>
+        <li data-n="2">Brand replies with links to posts they want</li>
+        <li data-n="3">Creator gets the SMS ask → <b>YES</b> = the license</li>
+        <li data-n="4">File lands → creator paid same day (Venmo/PayPal)</li>
+        <li data-n="5"><b>$75 × n confirmed</b> → next monthly invoice</li>
+      </ol>
+    </div>
+    <div class="flow hot">
+      <div class="f-tag">flow b · this deal (rights bundled)</div>
+      <h3>Bundled — rights disclosed in the invite</h3>
+      <ol>
+        <li data-n="1">Campaign invite states it: payment + <b>$75 rights fee</b>, 12-month license, raw file due</li>
+        <li data-n="2">Creator accepts campaign = consents to the rights sale</li>
+        <li data-n="3">Content delivered + approved, raw file in</li>
+        <li data-n="4">Creator paid: campaign fee + rights fee, same payout</li>
+        <li data-n="5">Both amounts → next monthly invoice, separate lines</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ 03 the matrix ══════════ -->
+<section id="matrix">
+  <div class="sec-head"><span class="sec-num">03 —</span><h2>What everyone else does — the money flow</h2></div>
+  <p class="sec-sub">The market study mapped what rights <b>cost</b>; this matrix maps how the money <b>moves</b>. <span class="pill y">pass-through / creator whole</span> <span class="pill m">fee on top</span> <span class="pill n">opaque bundle</span></p>
+  <div class="mx-scroll"><table class="mx">
+    <thead><tr><th>Platform</th><th>How the brand pays</th><th>When charged</th><th>Fee on creator money</th><th>Rights billed as</th></tr></thead>
+    <tbody>
+      <tr class="grp"><td colspan="5">Marketplaces & studios — prepay camp</td></tr>
+      <tr><td class="plat">Insense</td><td>Subscription + prepaid wallet top-up (card, or invoice on 3-mo contract) · min $50</td><td>Funds must cover the hire; released to creator on "Finish deal" (approval)</td><td><span class="pill m">7–20% by plan, on top</span> <span class="note">(pricing page; their FAQ still says 15/20% — pages conflict)</span></td><td class="note">Bundled — "full digital copyright" included; ad-hoc extras via an "Extra Payments" rail</td></tr>
+      <tr><td class="plat">JoinBrands</td><td>Card on file, per job (+ optional SaaS tiers)</td><td>Charged when a creator <b>takes</b> the job → escrow → released on approval</td><td><span class="pill m">8–15% brand-side</span> <span class="note">+ 20% off the creator's side</span></td><td class="note">Bundled — "unlimited usage rights" on every plan</td></tr>
+      <tr><td class="plat">Billo</td><td>Prepaid packs, card only · 12-mo expiry, non-refundable</td><td>Upfront at order creation; creator paid on approval, batched 2×/month (PayPal)</td><td><span class="pill n">opaque</span> <span class="note">price "encompasses creator payout, software, transaction fees" — split hidden</span></td><td class="note">Bundled — full IP assignment inside the order fee</td></tr>
+      <tr><td class="plat">#paid</td><td>Card on file; first invoice = non-refundable deposit</td><td>Creator fees charged on <b>brief consent</b>; kickoff gated on full payment · creators paid ~net-30, 15th/EOM</td><td><span class="pill n">opaque</span> <span class="note">subscription + creator fees separate, markup unpublished</span></td><td class="note"><b>Separate line</b> — rights tiers "purchased from the Creator(s) through #paid" per brief</td></tr>
+      <tr><td class="plat">TRIBE</td><td>Card PAYG (+1.4% processing) or invoice credit ($5k min, EOM invoicing)</td><td>Charged at the click that <b>approves</b> each submission; creator paid on publish (48h fast / 45d std)</td><td><span class="pill m">30% margin</span> <span class="note">$10k spend → creators get $7k</span></td><td class="note"><b>Separate purchase</b> — fixed price per license tier, same rail (their post-hoc checkout)</td></tr>
+      <tr><td class="plat">Statusphere</td><td>Prepaid credits, programs from ~$10k</td><td>Credits bought before creator actions consume them</td><td><span class="pill n">opaque</span> <span class="note">all-in credits; platform auto-pays its network</span></td><td class="note">Bundled — "rights built into every post," ad codes without surcharge</td></tr>
+      <tr class="grp"><td colspan="5">SaaS-first — the camp Benable is in</td></tr>
+      <tr><td class="plat">Social Cat</td><td>Subscription only ($99–299/mo)</td><td>n/a — collab money <b>never touches the platform</b> (brand ↔ creator direct)</td><td><span class="pill y">none — no rail exists</span></td><td class="note">Bundled into ToS — every plan includes the license; no per-use billing</td></tr>
+      <tr class="twin"><td class="plat">Aspire<small>benable's structural twin</small></td><td>Card on file, or pre-funded balance via ACH / wire / check</td><td>On "Send Payment" after deliverables complete; Aspire's PayPal → creator's PayPal ≤7 business days</td><td><span class="pill y">creator gets 100%</span> <span class="note">brand pays 2% handling (+3% if card) — fees brand-side, never off the creator</span></td><td class="note">In briefs — no separate rights rail; PayPal handles any 1099-K</td></tr>
+      <tr><td class="plat">GRIN</td><td>SaaS license (~$27k/yr median) + brand pre-funds payouts</td><td>Brand-triggered, per its own creator contracts; PayPal "instant"</td><td><span class="pill n">undisclosed</span> <span class="note">processing fees reported by buyers, no published %</span></td><td class="note">n/a — no rights tooling; GRIN self-issues creator 1099-NECs</td></tr>
+      <tr class="grp"><td colspan="5">Managed & baseline</td></tr>
+      <tr><td class="plat">minisocial</td><td>Flat project invoice — $3k / 10 creators, all-inclusive</td><td>Per project (terms unpublished); minisocial pays creators</td><td><span class="pill n">opaque</span> <span class="note">creator pay inside the flat fee</span></td><td class="note">Bundled — "mini license" + 30d whitelisting in the price</td></tr>
+      <tr><td class="plat">ShopMy</td><td>Subscription + deposited Opportunity budget</td><td>Budget funded upfront; bonus auto-pays when creator completes commitments (Stripe/PayPal, Fridays)</td><td><span class="pill m">~15% of deposit</span> <span class="note">third-party reported — no official number</span></td><td class="note">Amplify buys content/ads placements; no rights line item</td></tr>
+      <tr><td class="plat">Upwork · Fiverr<small>the escrow baseline</small></td><td>Escrow funded at booking / order</td><td>Charged upfront, <b>released on approval</b> (Upwork 14d auto-release; Fiverr 3d auto-complete + 14d clearance)</td><td><span class="pill m">Upwork freelancer-side 10% · Fiverr 20% + buyer fee</span></td><td class="note">n/a — the mechanic everyone copied</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<!-- ══════════ 04 patterns ══════════ -->
+<section id="patterns">
+  <div class="sec-head"><span class="sec-num">04 —</span><h2>Three patterns worth stealing</h2></div>
+  <div class="pats">
+    <div class="pat">
+      <div class="p-num">i.</div>
+      <h3>Charge on confirmation, release on approval</h3>
+      <p>Universal, from Upwork's escrow to JoinBrands' charge-on-accept to TRIBE's pay-per-approved-submission. <b>Nobody bills for a creator who declined.</b> Benable's "only confirmed posts are billed" already matches the market's best behavior — keep it as the invariant no billing change may break.</p>
+    </div>
+    <div class="pat">
+      <div class="p-num">ii.</div>
+      <h3>A separate rights line is the premium move</h3>
+      <p>Downmarket bundles rights invisibly; only the premium tier (<b>TRIBE</b>, <b>#paid</b>) bills rights as their own purchase. Benable runs the premium mechanic at a pass-through price — the exact unclaimed wedge the market study named.</p>
+      <p class="steal"><b>Steal:</b> TRIBE charges at the approval click. When the portal productizes rights, "confirm creator" = the charge moment.</p>
+    </div>
+    <div class="pat">
+      <div class="p-num">iii.</div>
+      <h3>Aspire is the structural twin — then the fork</h3>
+      <p>Creator gets 100%, fees sit brand-side, PayPal Payouts rail, PayPal absorbs tax forms. Copy it wholesale. The later monetization fork: a <b>take-rate</b> on pass-through (industry 8–30%) vs a <b>rights-included premium tier</b> (Social Cat's model).</p>
+      <p class="steal"><b>Signal:</b> Chiara said she'd pay for a pricier Benable plan with rights included — one real data point for the tier path over the take-rate path.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ 05 watch-outs ══════════ -->
+<section id="watchouts">
+  <div class="sec-head"><span class="sec-num">05 —</span><h2>Ops watch-outs</h2></div>
+  <p class="sec-sub">Published facts for finance to confirm — <b>not legal or tax advice</b>. The two starred items are where a CPA makes the call.</p>
+  <div class="watch">
+    <div class="w-card">
+      <h3>Tax forms: near-zero duty, collect W-9s anyway</h3>
+      <p>Current IRS instructions put the <b>1099-NEC threshold at $2,000</b>/creator/year for payments made in 2026 (up from $600, per the 2025 tax bill), and the 1099-K TPSO threshold reverted to <b>&gt;$20k AND &gt;200 transactions</b>. Payments settled through a third-party network (PayPal) are the network's to report, not the payer's.</p>
+      <p>Still: the Upwork / GRIN / Fiverr norm is <b>W-9 before the first dollar moves</b> — it costs nothing, covers the 24% backup-withholding rule, and repeat paid creators can cross $2k.</p>
+      <p class="cite">irs.gov/instructions/i1099mec · IRS FS-2025-08 · paypal.com 1099-K help</p>
+      <div class="w-flag"><b>★ CPA call:</b> GRIN self-issues 1099-NECs; Aspire issues nothing and points at PayPal's 1099-K. Same rail, opposite positions — both published. Pick one deliberately.</div>
+    </div>
+    <div class="w-card">
+      <h3>Sales tax: separate lines are load-bearing</h3>
+      <p>NY taxes SaaS including remote access (<b>TB-ST-128</b>) but excludes advertising / representative services (<b>20 NYCRR 527.3</b>). In <em>Beeline.com</em> (NY App. Div., <b>Jan 15 2026</b>), a SaaS-plus-services bundle was taxed in full because the software was the "true object" and the parts weren't separately stated.</p>
+      <p>Stripe Tax applies a tax code per line item — SaaS line taxable, creator/rights lines mapped to service codes. The invoice structure in § 01 is what makes that mapping possible.</p>
+      <p class="cite">tax.ny.gov TB-ST-128 · 20 NYCRR 527.3 · docs.stripe.com/tax</p>
+      <div class="w-flag"><b>★ CPA call:</b> confirm the pass-through lines' code mapping per state (brand billing addresses: NY precedent already open from the Pair deal).</div>
+    </div>
+    <div class="w-card wide">
+      <h3>Keep pass-through out of revenue</h3>
+      <p>With no markup and no pricing discretion, Benable is an <b>agent</b> under ASC 606 — the pass-through is cash-in / liability / cash-out, and only the subscription is revenue. PwC's guidance: gross-vs-net "is not a choice," it follows control. Practically: the $450 rights line never touches MRR, and dashboards that mix it in will overstate the business.</p>
+      <p class="cite">ASC 606-10-55-36…40 · PwC Viewpoint, principal vs agent</p>
+    </div>
+  </div>
+  <p class="disclaimer">sources are published docs & filings as of aug 10 2026 · not legal, tax, or accounting advice</p>
+</section>
+
+<!-- ══════════ 06 language flag ══════════ -->
+<section id="language">
+  <div class="sec-head"><span class="sec-num">06 —</span><h2>One language flag before the contract ships</h2></div>
+  <div class="lang-box">
+    <h3>"Full ownership" isn't what we decided to sell</h3>
+    <p>The deal memo says the brand pays for <b>"full ownership rights."</b> The Aug 7 decision was deliberately narrower: <b>raw files delivered outright + a 12-month worldwide license</b> (owned channels + paid ads), renewable through Benable — with "perpetual" banned from all copy. The market study prices true perpetuity at <b>2–5×</b> a timed license; $50–100 for actual ownership would undersell creators and reopen the one complaint that can poison the creator side ("my face in their ads forever, for $75").</p>
+    <p class="lang-line"><b>Keep the 12-month clock</b> unless this brand's contract explicitly promised assignment. The renewal is also the future revenue moment — Amazon runs 90-day licenses with a preset extension fee for exactly this reason.</p>
+  </div>
+</section>
+
+<!-- ══════════ 07 receipts ══════════ -->
+<section id="receipts">
+  <div class="sec-head"><span class="sec-num">07 —</span><h2>Receipts</h2></div>
+  <p class="sec-sub">Load-bearing claims and where they come from. <span class="pill y">verified</span> = stated on a fetched official page · <span class="pill m">reported</span> = third-party or search-snippet only.</p>
+  <div class="verif"><div class="vt-scroll"><table class="vt">
+    <thead><tr><th>Claim</th><th>Source</th><th>Status</th></tr></thead>
+    <tbody>
+      <tr><td class="claim-c">TRIBE charges a 30% margin on campaign spend ($10k → creators receive $7k) and bills at the approval click; invoice credit needs $5k minimum</td><td class="ev">help.tribegroup.co — "Campaign payments and fees," "Billing: credit card vs invoice"</td><td><span class="pill y">verified</span></td></tr>
+      <tr><td class="claim-c">Aspire: creators "receive 100% of the agreed-upon amount"; brand pays 2% handling + 3% card processing; payouts from Aspire's PayPal within 7 business days</td><td class="ev">aspire.io/legal/handling-and-processing-fees · help.aspireiq.com "How do payments work"</td><td><span class="pill y">verified</span></td></tr>
+      <tr><td class="claim-c">Aspire issues no tax forms — "PayPal will issue a 1099-K directly" if thresholds met</td><td class="ev">help.aspireiq.com "How do payments work on Aspire"</td><td><span class="pill y">verified</span></td></tr>
+      <tr><td class="claim-c">JoinBrands: card charged when a creator takes the job, held in escrow, released on approval; brand-side fee 8–15% by tier, creator-side 20% (15% with Creator Pro)</td><td class="ev">help.joinbrands.com billing & fees articles · joinbrands.com/pricing</td><td><span class="pill y">verified</span></td></tr>
+      <tr><td class="claim-c">Insense: prepaid wallet, funds required to onboard creators, released on "Finish deal"; marketplace fee 7–20% by plan added on top of creator payments</td><td class="ev">insense.pro/pricing · insense.pro/faq · help.insense.pro (4315, 4328)</td><td><span class="pill y">verified</span> <span class="note">(FAQ says 15/20% — official pages conflict)</span></td></tr>
+      <tr><td class="claim-c">#paid: first invoice is a non-refundable deposit; creator fees charged on brief consent; kickoff gated on full payment; usage rights "purchased from the Creator(s) through #paid"</td><td class="ev">hashtagpaid.com/terms · hashtagpaid.com/terms-creator</td><td><span class="pill y">verified</span></td></tr>
+      <tr><td class="claim-c">Billo: prepaid packs, charged upfront at order, non-refundable (25% admin fee on exceptions); full IP assignment inside the order fee; creators paid on approval 2×/month via PayPal</td><td class="ev">billo.app/terms-of-service-2025 · help.billo.app</td><td><span class="pill y">verified</span></td></tr>
+      <tr><td class="claim-c">Social Cat: "payments must be handled directly between the brand and the creators and cannot be processed via Social Cat"</td><td class="ev">help.thesocialcat.com article 1925378 · thesocialcat.com/pricing</td><td><span class="pill y">verified</span></td></tr>
+      <tr><td class="claim-c">ShopMy takes ~15% of deposited Opportunity budgets on top of subscription</td><td class="ev">influencer-hero.com ShopMy pricing review — no official % published</td><td><span class="pill m">reported</span></td></tr>
+      <tr><td class="claim-c">1099-NEC threshold is $2,000 for tax years beginning after 2025; 1099-K reverted to &gt;$20k and &gt;200 transactions; TPSO-settled payments are not payer-reportable on 1099-NEC</td><td class="ev">irs.gov/instructions/i1099mec · IRS FS-2025-08 (Oct 23 2025) · paypal.com 1099-K help (state exceptions: VT/MA/VA/MD $600, IL $1k)</td><td><span class="pill y">verified</span></td></tr>
+      <tr><td class="claim-c">PayPal Payouts sends to Venmo recipients (recipient_wallet: VENMO, US-only, USD); recipients without Venmo get an SMS claim flow</td><td class="ev">developer.paypal.com/docs/payouts/standard/payouts-to-venmo</td><td><span class="pill y">verified</span></td></tr>
+      <tr><td class="claim-c">NY: remote-access software taxable (TB-ST-128); advertising-agency / representative services excluded (20 NYCRR 527.3); bundled SaaS+services taxed in full when not separable (Beeline.com, App. Div. Jan 15 2026)</td><td class="ev">tax.ny.gov TB-ST-128 · Cornell LII 20 NYCRR 527.3 · Forvis Mazars alert on Beeline</td><td><span class="pill y">verified</span></td></tr>
+      <tr><td class="claim-c">Agent recognizes revenue net of pass-through; gross-vs-net "is not a choice" — follows control, pricing discretion, inventory risk</td><td class="ev">ASC 606-10-55-36…40 · PwC Viewpoint principal-vs-agent · MGO CPA on talent-procurement pass-throughs</td><td><span class="pill y">verified</span></td></tr>
+      <tr><td class="claim-c">W-9 before first payout is the platform norm (Upwork: required to withdraw; GRIN: required before payout or refunded in 30 days; Fiverr: collected from all US sellers)</td><td class="ev">support.upwork.com W-9 articles · help.grin.co payout setup · help-pro.fiverr.com W-9 collection</td><td><span class="pill y">verified</span> <span class="note">(help centers bot-gated; official articles via snippets)</span></td></tr>
+    </tbody>
+  </table></div></div>
+</section>
+
+<footer>
+  <span>ugc rights · how to bill it · aug 10 2026</span>
+  <span><a href="what-others-do.html">companion: what everyone else does</a> · <a href="rights-language-v1.html">the language</a></span>
+  <span>benable · internal</span>
+</footer>
+
+</div>
+</body>
+</html>
